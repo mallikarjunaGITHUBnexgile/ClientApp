@@ -1,0 +1,39 @@
+.navbar {
+    background-color: rgb(16, 16, 65) !important;
+}
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+    color: white;
+}
+
+.text-dark {
+    color: white !important;
+}
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+#profileImage {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: white;
+    font-size: 25px;
+    color: rgb(16, 16, 65);
+    text-align: center;
+    font-family: 'Brush Script MT';
+}

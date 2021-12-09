@@ -1,0 +1,34 @@
+.signUp {
+    padding: 5px;
+}
+
+.signUpOut {
+    border: 2px solid black;
+    width: 40%;
+    border-radius: 8%;
+    margin-left: 30%;
+    margin-top: 10%;
+    align-items: center;
+    padding: 17px;
+    box-shadow: 13px 13px 5px gray;
+    background-color: rgb(16, 16, 65);
+    color: white;
+}
+
+.clearfix {
+    display: flex;
+    /* text-align: center; */
+    align-items: center;
+    justify-content: center;
+    /* border-spacing: 59px; */
+    place-content: space-evenly;
+    padding: 10px;
+}
+
+.warn {
+    color: red;
+}
+
+.login {
+    text-align: center;
+}
