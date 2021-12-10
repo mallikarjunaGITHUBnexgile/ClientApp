@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppService } from '../app.service';
 
@@ -19,6 +19,7 @@ export interface PeriodicElement {
 export class DashboardComponent implements OnInit {
   //name = this.service.tempData[i].firstName;
   showFiller = false;
+  @Output() LogOutBtn: any;
   public x = JSON.parse(localStorage.getItem('signindata') || '{}')
 
   ELEMENT_DATA: PeriodicElement[] = [
@@ -33,6 +34,9 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     var x = JSON.parse(localStorage.getItem('signindata') || '{}');
     console.log(x.firstName);
+    this.service.logOutButtonFlag=true;
+    //this.LogOutBtn=true;
+    //this.router.navigate(['/nav-menu']);
   }
 
 

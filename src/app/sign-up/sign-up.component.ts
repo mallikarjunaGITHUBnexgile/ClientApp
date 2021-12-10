@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppService } from '../app.service';
@@ -12,10 +12,12 @@ import { CustomValidators } from '../custom-validators';
 export class SignUpComponent implements OnInit {
   public signUpForm: any;
   public passwordValidator: any;
+  public icondata:boolean=false;
 
   constructor(private formBuilder: FormBuilder,private router: Router, private service: AppService) { }
 
   ngOnInit(): void {
+    
     this.signUp();
     
   }
@@ -41,6 +43,7 @@ export class SignUpComponent implements OnInit {
       this.signUpForm.markAllAsTouched();
       return;
     }else {
+      this.icondata = true;
       //console.log(this.signUpForm.value)
       this.service.tempData.push(this.signUpForm.value)
       //console.log(this.service.tempData);

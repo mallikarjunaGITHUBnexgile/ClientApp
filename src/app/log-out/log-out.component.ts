@@ -23,7 +23,7 @@ export class LogOutComponent implements OnInit {
       title: "Hey!!",
       text: "Do you want to logout really??",//"User with "+this.loginForm.get("userName")?.value,
       icon: "warning",
-      //buttons: ["Cancel", "Ok"],
+      buttons: ["No", "Yes"]
       
       
     });

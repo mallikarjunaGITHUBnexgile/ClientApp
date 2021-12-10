@@ -41,7 +41,7 @@ import { LogOutComponent } from './log-out/log-out.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'nav-menu', component: NavMenuComponent },
       { path: 'login', component: LogInComponent },
       { path: 'logout', component: LogOutComponent },
       { path: 'signUp', component: SignUpComponent },
