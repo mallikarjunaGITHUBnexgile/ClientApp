@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppService } from '../app.service';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-log-out',
@@ -9,6 +10,7 @@ import { AppService } from '../app.service';
 })
 export class LogOutComponent implements OnInit {
 
+  public vallue:any;
   constructor(private router: Router, private service: AppService) { }
 
   ngOnInit(): void {
@@ -17,6 +19,14 @@ export class LogOutComponent implements OnInit {
   }
   
   logOut(){
+    swal({
+      title: "Hey!!",
+      text: "Do you want to logout really??",//"User with "+this.loginForm.get("userName")?.value,
+      icon: "warning",
+      //buttons: ["Cancel", "Ok"],
+      
+      
+    });
     this.router.navigate(['/']);
     // clears local storage
     localStorage.clear();
