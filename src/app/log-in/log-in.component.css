@@ -26,7 +26,7 @@ body {
 }
 
 ::selection {
-    background: #ff80bf;
+    background: rgb(162, 162, 231);
 }
 
 .container {
