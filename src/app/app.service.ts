@@ -5,10 +5,9 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AppService {
  public tempData: any[] = [];
- public logOutButtonFlag!: boolean;
- public data = new BehaviorSubject<any>(false);
+ //public logOutButtonFlag!: boolean;
+ public icon = new BehaviorSubject<any>(false);
+ public profileIcon:any="";
   constructor() { }
-  sendicondata(){
-    this.data.next(this.data);
-  }
+
 }

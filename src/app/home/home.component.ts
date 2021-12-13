@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,12 @@ import { Router } from '@angular/router';
   styleUrls:['./home.component.css']
 })
 export class HomeComponent {
-  constructor(private router: Router){}
+  public icons:boolean=false;
+  constructor(private router: Router, private service:AppService){}
+
+  ngOnInIt(){
+    this.service.icon.next(this.icons=false);
+  }
 
   login(){
     this.router.navigate(['/login']);

@@ -16,15 +16,15 @@
             <div (icondata)="getNotification($event)" class="navbar-collapse collapse d-sm-inline-flex justify-content-end" [ngClass]="{ show: isExpanded }">
                 <ul class="navbar-nav flex-grow">
                     <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
-                        <a class="nav-link text-dark" [routerLink]="['/']"><i class="bi bi-house"></i></a>
+                        <a class="nav-link text-dark" [routerLink]="['/']"><i *ngIf="logOutIcon" class="bi bi-house"></i></a>
                     </li>
 
-                    <li *ngIf=logOutEnable class="nav-item" [routerLinkActive]="['link-active']">
+                    <li *ngIf="homeIcon" class="nav-item" [routerLinkActive]="['link-active']">
                         <a class="nav-link text-dark" [routerLink]="['/logout']"><i class="bi bi-box-arrow-right"></i></a>
                     </li>
-                    <li *ngIf="true" class="nav-item" [routerLinkActive]="['link-active']">
+                    <li *ngIf="profileIcon" class="nav-item" [routerLinkActive]="['link-active']">
                         <a class="nav-link text-dark" [routerLink]="['/counter']">
-                            <div id="profileImage">M</div>
+                            <div id="profileImage">{{profile}}</div>
                         </a>
                     </li>
                 </ul>

@@ -12,7 +12,7 @@ import { CustomValidators } from '../custom-validators';
 export class SignUpComponent implements OnInit {
   public signUpForm: any;
   public passwordValidator: any;
-  public icondata:boolean=false;
+  public icons:boolean=false;
 
   constructor(private formBuilder: FormBuilder,private router: Router, private service: AppService) { }
 
@@ -43,8 +43,7 @@ export class SignUpComponent implements OnInit {
       this.signUpForm.markAllAsTouched();
       return;
     }else {
-      this.icondata = true;
-      //console.log(this.signUpForm.value)
+      //this.service.icon.next(this.icons=true);
       this.service.tempData.push(this.signUpForm.value)
       //console.log(this.service.tempData);
       this.router.navigate(['/login']);

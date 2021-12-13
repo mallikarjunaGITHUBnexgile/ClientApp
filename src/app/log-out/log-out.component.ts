@@ -11,6 +11,7 @@ import swal from 'sweetalert';
 export class LogOutComponent implements OnInit {
 
   public vallue:any;
+  public icons:boolean=false;
   constructor(private router: Router, private service: AppService) { }
 
   ngOnInit(): void {
@@ -34,6 +35,7 @@ export class LogOutComponent implements OnInit {
     this.service.tempData=[];
     // clears console data
     console.clear();
+    this.service.icon.next(this.icons=false);
   }
 
 }

@@ -34,7 +34,8 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     var x = JSON.parse(localStorage.getItem('signindata') || '{}');
     console.log(x.firstName);
-    this.service.logOutButtonFlag=true;
+    console.log(this.service.profileIcon=(x.firstName).charAt[0]);
+    //this.service.logOutButtonFlag=true;
     //this.LogOutBtn=true;
     //this.router.navigate(['/nav-menu']);
   }
