@@ -19,7 +19,9 @@ export interface PeriodicElement {
 export class DashboardComponent implements OnInit {
   //name = this.service.tempData[i].firstName;
   showFiller = false;
-  @Output() LogOutBtn: any;
+  icons=false;
+  public letter!: String;
+  //@Output() LogOutBtn: any;
   public x = JSON.parse(localStorage.getItem('signindata') || '{}')
 
   ELEMENT_DATA: PeriodicElement[] = [
@@ -34,7 +36,11 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     var x = JSON.parse(localStorage.getItem('signindata') || '{}');
     console.log(x.firstName);
-    console.log(this.service.profileIcon=(x.firstName).charAt[0]);
+     this.letter=x.firstName;
+     localStorage.setItem("ProfileLetter",this.letter.charAt(0));
+     this.service.profileicon.next(this.icons=true);
+    console.log(this.letter.charAt(0));
+   // console.log(this.service.profileIcon=(x.firstName).charAt[0]);
     //this.service.logOutButtonFlag=true;
     //this.LogOutBtn=true;
     //this.router.navigate(['/nav-menu']);

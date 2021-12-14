@@ -13,6 +13,7 @@ export class NavMenuComponent implements OnChanges {
   public homeIcon: boolean = false;
   public profileIcon: boolean = false;
   public profile:any;
+  public letter:any;
   constructor(private service: AppService) { }
   @Input() player: AppService | undefined;
   ngOnChanges(changes: SimpleChanges): void {
@@ -22,18 +23,23 @@ export class NavMenuComponent implements OnChanges {
   ngOnInit(): void {
     //console.log("asdf")
     //this.logOutEnable = this.serviceLogOut.logOutButtonFlag;
+    this.letter="abc";
     this.service.icon.subscribe((res: any) => {
       console.log(res);
       this.homeIcon = res;
       this.logOutIcon = res;
       this.profileIcon = res;
     });
-    this.service.profileIcon.subscribe((res: any) => {
-      console.log(res);
-      this.profile=res;
+    this.service.profileicon.subscribe((res: any) => {
+      this.profile=localStorage.getItem("ProfileLetter");
+      //console.log("nav_ic")
+      //console.log(res);
+      //console.log(localStorage.getItem("ProfileLetter"));
+            
     });
 
   }
+  
   getNotification(data: any) {
     console.log("nav bar" + data);
   }

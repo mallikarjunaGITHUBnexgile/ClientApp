@@ -13,7 +13,7 @@ import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 export class LogInComponent implements OnInit {
   public loginForm: any;
   public name:any;
-  public loginObj: any[] = [];
+  @Input() loginObj: any[] = [];
   public flag=0;
   public icons:boolean=false;
   public profile:any;
@@ -62,7 +62,9 @@ export class LogInComponent implements OnInit {
           //alert("Welcome " + this.service.tempData[i].firstName);
           this.loginObj[0] = this.service.tempData[i]
           console.log(this.loginObj);
+          /* ***Changing value for enabling icons*** */
           this.service.icon.next(this.icons=true);
+          
           //console.log(JSON.stringify(this.service.profileIcon=this.service.tempData[i].firstName.charAt[0]));
           this.router.navigate(['/dashboard']);
          
@@ -81,8 +83,8 @@ export class LogInComponent implements OnInit {
     }
     if(this.flag<1){
       swal({
-            title: "User Not Found, please sign up",
-            //text: "User with "+this.loginForm.get("userName")?.value,
+            title: "Not Found",
+            text: "User details Not Found, please sign up"/*"User with "+this.loginForm.get("userName")?.value*/,
             icon: "error",
             buttons: ['cancel','Ok'] ,
           });
