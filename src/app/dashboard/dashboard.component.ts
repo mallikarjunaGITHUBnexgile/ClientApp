@@ -20,7 +20,8 @@ export class DashboardComponent implements OnInit {
   //name = this.service.tempData[i].firstName;
   showFiller = false;
   icons=false;
-  public letter!: String;
+  public firstName!: String;
+  public lastName!: String;
   //@Output() LogOutBtn: any;
   public x = JSON.parse(localStorage.getItem('signindata') || '{}')
 
@@ -36,10 +37,12 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     var x = JSON.parse(localStorage.getItem('signindata') || '{}');
     console.log(x.firstName);
-     this.letter=x.firstName;
-     localStorage.setItem("ProfileLetter",this.letter.charAt(0));
+     this.firstName=x.firstName;
+     this.firstName=this.firstName.toUpperCase();
+     this.lastName=(x.lastName).toUpperCase();
+     localStorage.setItem("ProfileLetter",this.firstName.charAt(0));
      this.service.profileicon.next(this.icons=true);
-    console.log(this.letter.charAt(0));
+   /// console.log(this.firstName.charAt(0));
    // console.log(this.service.profileIcon=(x.firstName).charAt[0]);
     //this.service.logOutButtonFlag=true;
     //this.LogOutBtn=true;

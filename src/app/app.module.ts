@@ -21,6 +21,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { LogOutComponent } from './log-out/log-out.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,7 @@ import { LogOutComponent } from './log-out/log-out.component';
     MatSidenavModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
+      { path: 'profile', component: CounterComponent },
       { path: 'nav-menu', component: NavMenuComponent },
       { path: 'login', component: LogInComponent },
       { path: 'logout', component: LogOutComponent },
