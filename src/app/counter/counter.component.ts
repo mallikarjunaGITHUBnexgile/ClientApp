@@ -15,6 +15,7 @@ export class CounterComponent {
   public lastName:any;
   public mailId:any;
   public phoneNumber:any;
+  public profileLetter:any;
 
   public incrementCounter() {
     this.currentCount++;
@@ -26,6 +27,7 @@ export class CounterComponent {
   this.lastName=x.lastName;
   this.phoneNumber=x.phoneNumber;
   this.mailId=x.mailId;
+  this.profileLetter=localStorage.getItem("ProfileLetter");
 }
 back(){
   this._location.back();
