@@ -55,7 +55,7 @@ export class LogInComponent implements OnInit {
     //     phoneNumber: "7894561230",
     //   }
       for (let i = 0; i < this.service.tempData.length; i++) {
-        console.log(this.service.tempData[i].mailId == this.loginForm.get("userName")?.value && this.service.tempData[i].password == this.loginForm.get("password")?.value && this.service.tempData.length > i);
+        //  console.log(this.service.tempData[i].mailId == this.loginForm.get("userName")?.value && this.service.tempData[i].password == this.loginForm.get("password")?.value && this.service.tempData.length > i);
         if (this.service.tempData[i].mailId == this.loginForm.get("userName")?.value && this.service.tempData[i].password == this.loginForm.get("password")?.value) {
            console.log(this.flag);
           this.flag++;

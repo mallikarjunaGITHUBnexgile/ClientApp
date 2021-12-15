@@ -28,6 +28,7 @@ export class CounterComponent {
   this.phoneNumber=x.phoneNumber;
   this.mailId=x.mailId;
   this.profileLetter=localStorage.getItem("ProfileLetter");
+  this.service.icon.next(true);
 }
 back(){
   this._location.back();

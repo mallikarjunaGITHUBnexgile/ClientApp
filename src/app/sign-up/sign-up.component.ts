@@ -29,6 +29,7 @@ export class SignUpComponent implements OnInit {
       phoneNumber: new FormControl("", [Validators.required, Validators.pattern('^[6-9]{1}[0-9]{9}$')]),
       password: new FormControl("", [Validators.required, Validators.pattern('^(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\\w\\d\\s:])([^\\s]){8,}$')]),
       confirmPassword: new FormControl("", [Validators.required,]),
+      //adress:new FormGroup("");
     },{validator : CustomValidators("password","confirmPassword")} 
     )
   }

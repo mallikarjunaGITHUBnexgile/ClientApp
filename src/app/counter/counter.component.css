@@ -2,7 +2,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     min-width: 18%;
     max-width: 300px;
-    margin: auto;
+    margin: -5px;
     text-align: center;
     font-family: arial;
     float: right;
@@ -11,13 +11,33 @@
     padding-top: 10px;
 }
 
-.card::after {
-    bottom: -9px !important;
-}
+
+/* ***Profile Details card tip*** */
 
 .card::before {
-    bottom: -15px;
+    content: '';
+    position: absolute;
+    width: 0;
+    height: -1px;
+    bottom: 100%;
+    right: 1em;
+    border: .75rem solid transparent;
+    border-bottom-color: #fff;
+    top: -8%;
+    border-bottom-color: rgb(16, 16, 65);
+    filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
 }
+
+
+/* .cardCap::after,
+.cardCap::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 100%;
+    right: 1.5em;
+} */
 
 .title {
     color: grey;
