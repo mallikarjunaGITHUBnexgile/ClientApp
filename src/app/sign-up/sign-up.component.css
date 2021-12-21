@@ -32,3 +32,8 @@
 .login {
     text-align: center;
 }
+
+.bi::before {
+    margin-left: -25px;
+    color: rgb(16, 16, 65);
+}
