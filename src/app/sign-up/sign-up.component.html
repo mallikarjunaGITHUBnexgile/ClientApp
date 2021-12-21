@@ -39,7 +39,7 @@
         <div class="signUp row Col-md-12">
             <div class="col-md-5 ">Phone Number </div>
             <div class="col-md-1">:</div>
-            <div class="col-md-6 input-box "><input ngModel="7894561230" formControlName="phoneNumber" type="text">
+            <div class="col-md-6 input-box "><input type="number" ngModel="7894561230" formControlName="phoneNumber" type="text">
                 <div *ngIf="signUpForm.controls['phoneNumber'].invalid && signUpForm.controls['phoneNumber'].touched" class="warn">
                     <div *ngIf="signUpForm.controls['phoneNumber'].errors?.required">
                         Phone number required.
@@ -53,7 +53,12 @@
         <div class="signUp row Col-md-12">
             <div class="col-md-5 ">Password </div>
             <div class="col-md-1">:</div>
-            <div class="col-md-6 input-box "><input ngModel="Hh@1234*" formControlName="password" type="text">
+            <div class="col-md-6 input-box ">
+                <div class="input-group ">
+                    <input ngModel="Hh@1234*" formControlName="password" [type]="showPassword ? 'text' : 'password'">
+                    <div class="col-md-1"><i (click)="showPassword = !showPassword" class="bi bi-eye-fill" [hidden]="showPassword"></i>
+                        <i class="bi bi-eye-slash-fill" (click)="showPassword = !showPassword" [hidden]="!showPassword"></i></div>
+                </div>
                 <div *ngIf="signUpForm.controls['password'].invalid && signUpForm.controls['password'].touched" class="warn">
                     <div *ngIf="signUpForm.controls['password'].errors?.required">
                         Password is required.
@@ -67,7 +72,12 @@
         <div class="signUp row Col-md-12">
             <div class="col-md-5 ">Confirm Password </div>
             <div class="col-md-1">:</div>
-            <div class="col-md-6 input-box "><input ngModel="Hh@1234*" formControlName="confirmPassword" type="text">
+            <div class="col-md-6 input-box ">
+                <div class="input-group ">
+                    <input ngModel="Hh@1234*" formControlName="confirmPassword" [type]="showConfPassword ? 'text' : 'password'">
+                    <div class="col-md-1"><i (click)="showConfPassword = !showConfPassword" class="bi bi-eye-fill" [hidden]="showConfPassword"></i>
+                        <i class="bi bi-eye-slash-fill" (click)="showConfPassword = !showConfPassword" [hidden]="!showConfPassword"></i></div>
+                </div>
                 <div *ngIf="signUpForm.controls['confirmPassword'].invalid && signUpForm.controls['confirmPassword'].touched" class="warn">
                     <!-- <div *ngIf="signUpForm.controls['confirmPassword'].errors?.required">
                     Password is required.

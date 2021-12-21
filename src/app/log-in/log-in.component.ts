@@ -12,14 +12,19 @@ import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 })
 export class LogInComponent implements OnInit {
   public loginForm: any;
+  public type="password";
   public name:any;
   @Input() loginObj: any[] = [];
   public flag=0;
   public icons:boolean=false;
   public profile:any;
+  public showPassword!: boolean;
+  hide:any;
 
   constructor(private formBuilder: FormBuilder, private service: AppService, private router: Router) { 
+  
   }
+  
 
 
   ngOnInit(): void {
@@ -28,6 +33,12 @@ export class LogInComponent implements OnInit {
     var x= localStorage.getItem('signindata');
     console.log(JSON.parse(x ||'{}').firstName);
     console.log(x)
+    this.hide="password"
+    
+    //this.type=password("")
+
+    //this.password(this.type);
+    
    
   }
 
@@ -37,6 +48,8 @@ export class LogInComponent implements OnInit {
       password: new FormControl("", [Validators.required,/*Validators.pattern('^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$')*/]),
     })
   }
+
+  
 
   onSubmit() {
     //this.serviceObject = Object.create(this.service)
@@ -93,9 +106,34 @@ export class LogInComponent implements OnInit {
 
 
   }
+
+  
   //    function dataObj(item: any) {
   //   if (item.mailId == this.loginForm.get("userName")?.value) {
   //     alert("Welcome " + item.firstName);
   //   }
   // }
+  public password(){
+    //var type:any;
+    // if(data=="password"){
+    //   this.type="text";
+    // }
+    // else{
+    //   this.type="password";
+    // }
+    // //this.ngOnInit();
+    // return this.type;
+    
+    //this.hide ? this.type="text" : this.type="password";
+
+    if (this.hide === 'password') {
+      this.hide = 'text';
+      //this.show = true;
+    } else {
+      this.hide = 'password';
+      //this.show = false;
+    }
+  }
+  
 }
+

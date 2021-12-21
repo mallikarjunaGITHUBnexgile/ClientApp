@@ -13,6 +13,8 @@ export class SignUpComponent implements OnInit {
   public signUpForm: any;
   public passwordValidator: any;
   public icons:boolean=false;
+  public showPassword! :boolean;
+  public showConfPassword! : boolean;
 
   constructor(private formBuilder: FormBuilder,private router: Router, private service: AppService) { }
 
