@@ -1,4 +1,5 @@
-.signUp {
+.signUp,
+.address {
     padding: 5px;
 }
 
@@ -36,4 +37,11 @@
 .bi::before {
     margin-left: -25px;
     color: rgb(16, 16, 65);
+    /*transition: all 0.3s ease;*/
+}
+
+#addressLine1,
+#addressLine2 {
+    width: 95%;
+    /*margin-left: 10px;*/
 }
