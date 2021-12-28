@@ -8,7 +8,7 @@
     width: 40%;
     border-radius: 8%;
     margin-left: 30%;
-    margin-top: 10%;
+    margin-top: 3%;
     align-items: center;
     padding: 17px;
     box-shadow: 13px 13px 5px gray;
@@ -44,4 +44,12 @@
 #addressLine2 {
     width: 95%;
     /*margin-left: 10px;*/
+}
+
+select,
+option,
+input {
+    width: 90%;
+    height: 28px;
+    text-align: center;
 }

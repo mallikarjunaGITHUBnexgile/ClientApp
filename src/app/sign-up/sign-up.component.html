@@ -37,6 +37,25 @@
             </div>
         </div>
         <div class="signUp row Col-md-12">
+            <div class="col-md-5 ">Role</div>
+            <div class="col-md-1">:</div>
+            <div class="col-md-6 input-box ">
+                <select formControlName="role">
+                    <option value="">---Select Role---</option>
+                    <option value="1">Manager</option>
+                    <option value="2">User</option>
+                </select>
+                <div *ngIf="signUpForm.controls['role'].invalid && signUpForm.controls['role'].touched" class="warn">
+                    <div *ngIf="signUpForm.controls['role'].errors?.required">
+                        Role required.
+                    </div>
+                    <!-- <div *ngIf="signUpForm.controls['role'].errors?.pattern">
+                        Enter valid Email.
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="signUp row Col-md-12">
             <div class="col-md-5 ">Phone Number </div>
             <div class="col-md-1">:</div>
             <div class="col-md-6 input-box "><input type="number" ngModel="7894561230" formControlName="phoneNumber" type="text">
@@ -110,11 +129,11 @@
         <div class="address Col-md-12">
             <div class="address"><input id="addressLine1" ngModel="Address Line one" formControlName="addressLine1" placeholder="Address line 1" type="text"></div>
             <div class="address"><input id="addressLine2" ngModel="address line two" formControlName="addressLine2" placeholder="Address line 2" type="text"></div>
-            <div class="address row mx-0">
+            <div class="row mx-0">
                 <div class="col-md-6 address"><input ngModel="city name" formControlName="city" placeholder="City" type="text"></div>
                 <div class="col-md-6 address"><input ngModel="State name" formControlName="state" placeholder="State" type="text"></div>
             </div>
-            <div class="address row mx-0">
+            <div class="row mx-0">
                 <div class="col-md-6 address"><input ngModel="Country" formControlName="country" placeholder="Country" type="text"></div>
                 <div class="col-md-6 address"><input ngModel="Zipcode" formControlName="zipcode" placeholder="zipcode" type="text"></div>
             </div>
