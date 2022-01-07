@@ -16,7 +16,7 @@ export class SignUpComponent implements OnInit {
   public showPassword! :boolean;
   public showConfPassword! : boolean;
 
-  constructor(private formBuilder: FormBuilder,private router: Router, private service: AppService) { }
+  constructor(public formBuilder: FormBuilder,public router: Router, public service: AppService) { }
 
   ngOnInit(): void {
     
