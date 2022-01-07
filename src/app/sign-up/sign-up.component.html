@@ -22,20 +22,7 @@
                 </div>
             </div>
         </div>
-        <div class="signUp row Col-md-12">
-            <div class="col-md-5 ">Mali ID </div>
-            <div class="col-md-1">:</div>
-            <div class="col-md-6 input-box "><input ngModel="hello@hel.com" formControlName="mailId" type="text">
-                <div *ngIf="signUpForm.controls['mailId'].invalid && signUpForm.controls['mailId'].touched" class="warn">
-                    <div *ngIf="signUpForm.controls['mailId'].errors?.required">
-                        Email required.
-                    </div>
-                    <div *ngIf="signUpForm.controls['mailId'].errors?.pattern">
-                        Enter valid Email.
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <div class="signUp row Col-md-12">
             <div class="col-md-5 ">Role</div>
             <div class="col-md-1">:</div>
@@ -65,6 +52,20 @@
                     </div>
                     <div *ngIf="signUpForm.controls['phoneNumber'].errors?.pattern">
                         Enter valid Phone Number.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="signUp row Col-md-12">
+            <div class="col-md-5 ">Mali ID </div>
+            <div class="col-md-1">:</div>
+            <div class="col-md-6 input-box "><input ngModel="hello@hel.com" formControlName="mailId" type="text">
+                <div *ngIf="signUpForm.controls['mailId'].invalid && signUpForm.controls['mailId'].touched" class="warn">
+                    <div *ngIf="signUpForm.controls['mailId'].errors?.required">
+                        Email required.
+                    </div>
+                    <div *ngIf="signUpForm.controls['mailId'].errors?.pattern">
+                        Enter valid Email.
                     </div>
                 </div>
             </div>

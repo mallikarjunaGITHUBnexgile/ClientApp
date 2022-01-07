@@ -4,11 +4,11 @@ import { AppService } from '../app.service';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-counter-component',
-  templateUrl: './counter.component.html',
-  styleUrls: ['./counter.component.css']
+  selector: 'app-profile-component',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
 })
-export class CounterComponent {
+export class ProfileComponent {
   constructor(private router: Router, private service: AppService, private _location: Location) { }
   public currentCount = 0;
   public firstName:any;
@@ -32,6 +32,9 @@ export class CounterComponent {
 }
 back(){
   this._location.back();
+}
+editProfile(){
+  this.router.navigate(['/editProfile']);
 }
 
 }

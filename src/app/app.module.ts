@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
+import {  ProfileComponent } from './profile/profile.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
@@ -19,6 +19,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { LogOutComponent } from './log-out/log-out.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 
 
@@ -27,12 +28,13 @@ import { LogOutComponent } from './log-out/log-out.component';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
+    ProfileComponent,
     FetchDataComponent,
     LogInComponent,
     SignUpComponent,
     DashboardComponent,
     LogOutComponent,
+    EditProfileComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -41,12 +43,13 @@ import { LogOutComponent } from './log-out/log-out.component';
     MatSidenavModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'profile', component: CounterComponent },
+      { path: 'profile', component: ProfileComponent },
       { path: 'nav-menu', component: NavMenuComponent },
       { path: 'login', component: LogInComponent },
       { path: 'logout', component: LogOutComponent },
       { path: 'signUp', component: SignUpComponent },
       { path: 'dashboard', component: DashboardComponent },
+      { path: 'editProfile', component: EditProfileComponent },
     ]),
     BrowserAnimationsModule
   ],
