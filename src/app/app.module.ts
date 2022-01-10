@@ -20,8 +20,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { LogOutComponent } from './log-out/log-out.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
-
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule, ReactiveFormsModule, MatTableModule, MatProgressBarModule, MatCardModule, MatProgressSpinnerModule,
-    MatSidenavModule,
+    MatSidenavModule,MatDatepickerModule,MatFormFieldModule,MatNativeDateModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'profile', component: ProfileComponent },
@@ -53,7 +55,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     ]),
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [MatNativeDateModule,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

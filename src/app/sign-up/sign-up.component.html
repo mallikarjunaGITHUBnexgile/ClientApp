@@ -42,10 +42,29 @@
                 </div>
             </div>
         </div>
+
+        <div class="signUp row Col-md-12">
+            <div class="col-md-5 ">Date Of Birth</div>
+            <div class="col-md-1">:</div>
+            <div class="col-md-6 input-box ">
+                <div appearance="fill">
+                    <input matInput type="date" formControlName="dateOfBirth">
+                </div>
+                <div *ngIf="signUpForm.controls['dateOfBirth'].invalid && signUpForm.controls['dateOfBirth'].touched" class="warn">
+                    <div *ngIf="signUpForm.controls['dateOfBirth'].errors?.required">
+                        Date required.
+                    </div>
+                    <!-- <div *ngIf="signUpForm.controls['role'].errors?.pattern">
+                        Enter valid Email.
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
         <div class="signUp row Col-md-12">
             <div class="col-md-5 ">Phone Number </div>
             <div class="col-md-1">:</div>
-            <div class="col-md-6 input-box "><input type="number" ngModel="7894561230" formControlName="phoneNumber" type="text">
+            <div class="col-md-6 input-box "><input type="number" ngModel="7894561230" formControlName="phoneNumber">
                 <div *ngIf="signUpForm.controls['phoneNumber'].invalid && signUpForm.controls['phoneNumber'].touched" class="warn">
                     <div *ngIf="signUpForm.controls['phoneNumber'].errors?.required">
                         Phone number required.

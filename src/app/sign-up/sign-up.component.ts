@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AppService } from '../app.service';
 import { CustomValidators } from '../custom-validators';
 
+
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -30,6 +31,7 @@ export class SignUpComponent implements OnInit {
       mailId: new FormControl("", [Validators.required, Validators.pattern(new RegExp('^[a-zA-Z0-9][a-zA-Z0-9._]{1,}@[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,}$'))]),
       phoneNumber: new FormControl("", [Validators.required, Validators.pattern('^[6-9]{1}[0-9]{9}$')]),
       role:new FormControl("",Validators.required),
+      dateOfBirth:new FormControl("",Validators.required),
       password: new FormControl("", [Validators.required, Validators.pattern('^(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\\w\\d\\s:])([^\\s]){8,}$')]),
       confirmPassword: new FormControl("", [Validators.required,]),
       addressLine1:new FormControl(""),
@@ -62,4 +64,5 @@ export class SignUpComponent implements OnInit {
 
   }
 }
+export class DatepickerDisabledExample {}
 
