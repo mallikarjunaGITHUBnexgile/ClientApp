@@ -1,0 +1,5 @@
+/*** To disable taking input form field ***/
+
+input[name=mailId] {
+    pointer-events: painted;
+}

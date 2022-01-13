@@ -1,8 +1,11 @@
+import { DatePipe } from '@angular/common';
 import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { DateRange } from '@angular/material/datepicker';
 import { Router } from '@angular/router';
 import { AppService } from '../app.service';
 import { CustomValidators } from '../custom-validators';
+import {CheckingDate} from '../custom-validators'
 
 
 @Component({
@@ -16,11 +19,27 @@ export class SignUpComponent implements OnInit {
   public icons:boolean=false;
   public showPassword! :boolean;
   public showConfPassword! : boolean;
+  public maxDate!:any;
+  public latest_date!:any;
 
-  constructor(public formBuilder: FormBuilder,public router: Router, public service: AppService) { }
+  public firstName="Hello";
+  public lastName="Hell";
+  public phoneNumber=7895641230;
+  public mailId="hello@hel.com";
+  public role=2;
+  public password="Hh@1234*";
+  public confirmPassword="Hh@1234*";
+  public name="mailId";
+
+
+  constructor(public formBuilder: FormBuilder,public router: Router, public service: AppService,public datepipe: DatePipe) { }
 
   ngOnInit(): void {
-    
+    /*** Helps to hide future dates ***/
+    this.maxDate=new Date();
+    this.latest_date =this.datepipe.transform(this.maxDate, 'yyyy-MM-dd');
+    //console.log(this.latest_date+" "+this.maxDate)
+
     this.signUp();
     
   }
@@ -41,7 +60,7 @@ export class SignUpComponent implements OnInit {
       country:new FormControl(""),
       zipcode:new FormControl("")
       //adress:new FormGroup("")
-    },{validator : CustomValidators("password","confirmPassword")} 
+    },{validator : CustomValidators("password","confirmPassword")}
     )
   }
   onSubmit() {
@@ -64,5 +83,6 @@ export class SignUpComponent implements OnInit {
 
   }
 }
-export class DatepickerDisabledExample {}
+//export class DatepickerDisabledExample {}
+
 

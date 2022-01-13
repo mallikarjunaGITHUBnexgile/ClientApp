@@ -13,3 +13,11 @@ export function CustomValidators(controlName: string, matchingControlName: strin
 }
 
 
+
+export function CheckingDate(date : string) {
+    //throw new Error("Function not implemented.");
+    const todaysDate=new Date();
+    return date;
+    
+}
+

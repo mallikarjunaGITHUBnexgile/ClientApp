@@ -16,17 +16,19 @@ export class ProfileComponent {
   public mailId:any;
   public phoneNumber:any;
   public profileLetter:any;
+  public role:any;
 
   public incrementCounter() {
     this.currentCount++;
   }
   ngOnInit(): void{
   var x = JSON.parse(localStorage.getItem('signindata') || '{}');
-  console.log(x);
+  console.log(x.role);
   this.firstName=x.firstName;
   this.lastName=x.lastName;
   this.phoneNumber=x.phoneNumber;
   this.mailId=x.mailId;
+  this.role=x.role;
   this.profileLetter=localStorage.getItem("ProfileLetter");
   this.service.icon.next(true);
 }
