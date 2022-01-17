@@ -5,7 +5,6 @@ import { DateRange } from '@angular/material/datepicker';
 import { Router } from '@angular/router';
 import { AppService } from '../app.service';
 import { CustomValidators } from '../custom-validators';
-import {CheckingDate} from '../custom-validators'
 
 
 @Component({
@@ -16,32 +15,32 @@ import {CheckingDate} from '../custom-validators'
 export class SignUpComponent implements OnInit {
   public signUpForm: any;
   public passwordValidator: any;
-  public icons:boolean=false;
-  public showPassword! :boolean;
-  public showConfPassword! : boolean;
-  public maxDate!:any;
-  public latest_date!:any;
+  public icons: boolean = false;
+  public showPassword!: boolean;
+  public showConfPassword!: boolean;
+  public maxDate!: any;
+  public latest_date!: any;
 
-  public firstName="Hello";
-  public lastName="Hell";
-  public phoneNumber=7895641230;
-  public mailId="hello@hel.com";
-  public role=2;
-  public password="Hh@1234*";
-  public confirmPassword="Hh@1234*";
-  public name="mailId";
+  public firstName = "Hello";
+  public lastName = "Hell";
+  public phoneNumber = 7895641230;
+  public mailId = "hello@hel.com";
+  public role = 1;
+  public password = "Hh@1234*";
+  public confirmPassword = "Hh@1234*";
+  public name = "mailId";
 
 
-  constructor(public formBuilder: FormBuilder,public router: Router, public service: AppService,public datepipe: DatePipe) { }
+  constructor(public formBuilder: FormBuilder, public router: Router, public service: AppService, public datepipe: DatePipe) { }
 
   ngOnInit(): void {
     /*** Helps to hide future dates ***/
-    this.maxDate=new Date();
-    this.latest_date =this.datepipe.transform(this.maxDate, 'yyyy-MM-dd');
+    this.maxDate = new Date();
+    this.latest_date = this.datepipe.transform(this.maxDate, 'yyyy-MM-dd');
     //console.log(this.latest_date+" "+this.maxDate)
 
     this.signUp();
-    
+
   }
   signUp() {
     this.signUpForm = this.formBuilder.group({
@@ -49,31 +48,31 @@ export class SignUpComponent implements OnInit {
       lastName: new FormControl("", Validators.required),
       mailId: new FormControl("", [Validators.required, Validators.pattern(new RegExp('^[a-zA-Z0-9][a-zA-Z0-9._]{1,}@[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,}$'))]),
       phoneNumber: new FormControl("", [Validators.required, Validators.pattern('^[6-9]{1}[0-9]{9}$')]),
-      role:new FormControl("",Validators.required),
-      dateOfBirth:new FormControl("",Validators.required),
+      role: new FormControl("", [Validators.required, Validators.pattern('^[1,2]{1}$')]),
+      dateOfBirth: new FormControl("", Validators.required),
       password: new FormControl("", [Validators.required, Validators.pattern('^(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\\w\\d\\s:])([^\\s]){8,}$')]),
       confirmPassword: new FormControl("", [Validators.required,]),
-      addressLine1:new FormControl(""),
+      addressLine1: new FormControl(""),
       addressLine2: new FormControl(""),
-      city:new FormControl(""),
-      state:new FormControl(""),
-      country:new FormControl(""),
-      zipcode:new FormControl("")
+      city: new FormControl(""),
+      state: new FormControl(""),
+      country: new FormControl(""),
+      zipcode: new FormControl("")
       //adress:new FormGroup("")
-    },{validator : CustomValidators("password","confirmPassword")}
+    }, { validator: CustomValidators("password", "confirmPassword") }
     )
   }
   onSubmit() {
-    localStorage.setItem('signindata',JSON.stringify( this.signUpForm.value));
+    localStorage.setItem('signindata', JSON.stringify(this.signUpForm.value));
     //console.log(this.signUpForm.get("firstName")?.value);
     //console.log(this.signUpForm.get("password")?.value === this.signUpForm.get("confirmPassword")?.value);
     // this.passwordValidator =! (this.signUpForm.get("password")?.value === this.signUpForm.get("confirmPassword")?.value);
     // console.log(this.passwordValidator);
-    
-    if(this.signUpForm.invalid){
+
+    if (this.signUpForm.invalid) {
       this.signUpForm.markAllAsTouched();
       return;
-    }else {
+    } else {
       //this.service.icon.next(this.icons=true);
       this.service.tempData.push(this.signUpForm.value)
       //console.log(this.service.tempData);

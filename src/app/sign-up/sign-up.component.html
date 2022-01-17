@@ -3,7 +3,7 @@
         <div class="signUp row Col-md-12">
             <div class="col-md-5 ">First Name </div>
             <div class="col-md-1">:</div>
-            <div class="col-md-6 input-box "><input ngModel={{firstName}} formControlName="firstName" type="text">
+            <div class="col-md-6 input-box "><input [(ngModel)]="firstName" formControlName="firstName" type="text">
                 <div *ngIf="signUpForm.controls['firstName'].invalid && signUpForm.controls['firstName'].touched" class="warn">
                     <div *ngIf="signUpForm.controls['firstName'].errors?.required">
                         Enter First Name.
@@ -28,14 +28,17 @@
             <div class="col-md-1">:</div>
             <div class="col-md-6 input-box ">
                 <select ngModel={{role}} formControlName="role">
-                    <option value="">---Select Role---</option>
+                    <option value="">---Select none---</option>
                     <option value="1">Manager</option>
                     <option value="2">User</option>
                 </select>
                 <div *ngIf="signUpForm.controls['role'].invalid && signUpForm.controls['role'].touched" class="warn">
-                    <div *ngIf="signUpForm.controls['role'].errors?.required">
+                    <div *ngIf="signUpForm.controls['role'].errors?.required || signUpForm.controls['role'].errors?.pattern">
                         Role required.
                     </div>
+                    <!-- <div *ngIf="signUpForm.controls['role'].errors?.pattern">
+                        Select correct Role.
+                    </div> -->
                     <!-- <div *ngIf="signUpForm.controls['role'].errors?.pattern">
                         Enter valid Email.
                     </div> -->

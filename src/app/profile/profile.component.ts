@@ -11,19 +11,28 @@ import { Location } from '@angular/common';
 export class ProfileComponent {
   constructor(private router: Router, private service: AppService, private _location: Location) { }
   public currentCount = 0;
-  public firstName:any;
-  public lastName:any;
-  public mailId:any;
-  public phoneNumber:any;
   public profileLetter:any;
-  public role:any;
+  // public firstName:any;
+  // public lastName:any;
+  // public mailId:any;
+  // public phoneNumber:any;
+  // public role:any;
+
+  public firstName="Hello";
+  public lastName="Hell";
+  public phoneNumber=7895641230;
+  public mailId="hello@hel.com";
+  public role=0;
+  public password="Hh@1234*";
+  public confirmPassword="Hh@1234*";
+  public name="mailId";
 
   public incrementCounter() {
     this.currentCount++;
   }
   ngOnInit(): void{
   var x = JSON.parse(localStorage.getItem('signindata') || '{}');
-  console.log(x.role);
+  console.log(x.role+" role");
   this.firstName=x.firstName;
   this.lastName=x.lastName;
   this.phoneNumber=x.phoneNumber;

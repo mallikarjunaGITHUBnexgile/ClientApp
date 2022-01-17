@@ -1,5 +1,74 @@
 /*** To disable taking input form field ***/
 
-input[name=mailId] {
+
+/* input[name=mailId] {
     pointer-events: painted;
+} */
+
+::selection {
+    background: rgb(42, 42, 94);
+    color: white;
+}
+
+.signUp,
+.address {
+    padding: 5px;
+}
+
+.signUpOut {
+    border: 2px solid black;
+    width: 40%;
+    border-radius: 8%;
+    margin-left: 30%;
+    margin-top: 3%;
+    align-items: center;
+    padding: 17px;
+    box-shadow: 13px 13px 5px gray;
+    background-color: rgb(16, 16, 65);
+    color: white;
+}
+
+.clearfix {
+    display: flex;
+    /* text-align: center; */
+    align-items: center;
+    justify-content: center;
+    /* border-spacing: 59px; */
+    place-content: space-evenly;
+    padding: 10px;
+}
+
+.warn {
+    color: red;
+}
+
+.login {
+    text-align: center;
+}
+
+.bi::before {
+    margin-left: -25px;
+    color: rgb(16, 16, 65);
+    /*transition: all 0.3s ease;*/
+}
+
+#addressLine1,
+#addressLine2 {
+    width: 95%;
+    /*margin-left: 10px;*/
+}
+
+select,
+option,
+input {
+    width: 90%;
+    height: 28px;
+    text-align: center;
+}
+
+
+/*** To disable taking input form field ***/
+
+input[name=mailId] {
+    pointer-events: none;
 }
