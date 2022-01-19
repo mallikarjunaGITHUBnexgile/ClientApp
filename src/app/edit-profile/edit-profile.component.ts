@@ -4,7 +4,6 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppService } from '../app.service';
 import { CustomValidators } from '../custom-validators';
-import { SignUpComponent } from '../sign-up/sign-up.component';
 
 @Component({
   selector: '[app-edit-profile]',
@@ -20,19 +19,26 @@ export class EditProfileComponent implements OnInit {
 
   public maxDate: any;
   public latest_date: any;
-  public signUpForm: any;
+  public editProfile: any;
   public passwordValidator: any;
   public icons: boolean = false;
   public showPassword: boolean | undefined;
   public showConfPassword: boolean | undefined;
 
-  public firstName="";
-  public lastName = "";
+  public firstName:any;
+  public lastName:any;
   public phoneNumber: any;
-  public mailId = "hello@hel.com";
-  public role = 2;
-  public password = "Hh@1234*";
-  public confirmPassword = "Hh@1234*";
+  public mailId :any;
+  public date:any;
+  public role : any;
+  public password:any;
+  public confirmPassword :any;
+  public addressLine1:any;
+  public addressLine2:any;
+  public city:any;
+  public state:any;
+  public country:any;
+  public zipcode:any;
 
 
   ngOnInit(): void {
@@ -40,17 +46,31 @@ export class EditProfileComponent implements OnInit {
     this.latest_date = this.datepipe.transform(this.maxDate, 'yyyy-MM-dd');
 
     var x = JSON.parse(localStorage.getItem('signindata') || '{}')
-    // this.firstName=x.firstName+"96";
-    // console.log(x.firstName+"89");
+    this.firstName=x.firstName;
+    this.lastName=x.lastName;
+    this.date=x.dateOfBirth;
+    //console.log(x.firstName+"89");
     this.phoneNumber = x.phoneNumber;
+     this.mailId = x.mailId;
+     this.role = x.role;
+     this.password = x.password;
+     this.confirmPassword = x.confirmPassword;
+     this.addressLine1=x.addressLine1;
+     this.addressLine2=x.addressLine2;
+     this.city=x.city;
+     this.state=x.state;
+     this.country=x.country;
+     this.zipcode=x.zipcode;
+     
+    this.editProf();
   }
 
   onSubmit() {
     console.log("Update")
   }
 
-  signUp() {
-    this.signUpForm = this.formBuilder.group({
+  editProf() {
+    this.editProfile = this.formBuilder.group({
       firstName: new FormControl("", Validators.required),
       lastName: new FormControl("", Validators.required),
       mailId: new FormControl("", [Validators.required, Validators.pattern(new RegExp('^[a-zA-Z0-9][a-zA-Z0-9._]{1,}@[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,}$'))]),

@@ -14,10 +14,10 @@ import { CustomValidators } from '../custom-validators';
 })
 export class SignUpComponent implements OnInit {
   public signUpForm: any;
-  public passwordValidator: any;
+  //public passwordValidator: any;
   public icons: boolean = false;
-  public showPassword!: boolean;
-  public showConfPassword!: boolean;
+  public showPassword: boolean | undefined;
+  public showConfPassword: boolean | undefined;
   public maxDate!: any;
   public latest_date!: any;
 

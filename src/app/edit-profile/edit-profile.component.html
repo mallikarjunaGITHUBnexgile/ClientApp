@@ -1,11 +1,11 @@
-<form [formGroup]="signUpForm" class="signUpOut">
+<form [formGroup]="editProfile" class="editProfile">
     <div class="container">
         <div class="signUp row Col-md-12">
             <div class="col-md-5 ">First Name </div>
             <div class="col-md-1">:</div>
-            <div class="col-md-6 input-box "><input ngModel="firstName" formControlName="firstName" type="text">
-                <div *ngIf="signUpForm.controls['firstName'].invalid && signUpForm.controls['firstName'].touched" class="warn">
-                    <div *ngIf="signUpForm.controls['firstName'].errors?.required">
+            <div class="col-md-6 input-box "><input [(ngModel)]="firstName" formControlName="firstName" type="text">
+                <div *ngIf="editProfile.controls['firstName'].invalid && editProfile.controls['firstName'].touched" class="warn">
+                    <div *ngIf="editProfile.controls['firstName'].errors?.required">
                         Enter First Name.
                     </div>
                 </div>
@@ -14,9 +14,9 @@
         <div class="signUp row Col-md-12">
             <div class="col-md-5 ">Last Name </div>
             <div class="col-md-1">:</div>
-            <div class="col-md-6 input-box "><input ngModel={{lastName}} formControlName="lastName" type="text">
-                <div *ngIf="signUpForm.controls['lastName'].invalid && signUpForm.controls['lastName'].touched" class="warn">
-                    <div *ngIf="signUpForm.controls['lastName'].errors?.required">
+            <div class="col-md-6 input-box "><input [(ngModel)]="lastName" formControlName="lastName" type="text">
+                <div *ngIf="editProfile.controls['lastName'].invalid && editProfile.controls['lastName'].touched" class="warn">
+                    <div *ngIf="editProfile.controls['lastName'].errors?.required">
                         Enter Last Name.
                     </div>
                 </div>
@@ -27,19 +27,19 @@
             <div class="col-md-5 ">Role</div>
             <div class="col-md-1">:</div>
             <div class="col-md-6 input-box ">
-                <select ngModel={{role}} formControlName="role">
+                <select [(ngModel)]="role" formControlName="role">
                     <option value="">---Select none---</option>
                     <option value="1">Manager</option>
                     <option value="2">User</option>
                 </select>
-                <div *ngIf="signUpForm.controls['role'].invalid && signUpForm.controls['role'].touched" class="warn">
-                    <div *ngIf="signUpForm.controls['role'].errors?.required || signUpForm.controls['role'].errors?.pattern">
+                <div *ngIf="editProfile.controls['role'].invalid && editProfile.controls['role'].touched" class="warn">
+                    <div *ngIf="editProfile.controls['role'].errors?.required || editProfile.controls['role'].errors?.pattern">
                         Role required.
                     </div>
-                    <!-- <div *ngIf="signUpForm.controls['role'].errors?.pattern">
+                    <!-- <div *ngIf="editProfile.controls['role'].errors?.pattern">
                         Select correct Role.
                     </div> -->
-                    <!-- <div *ngIf="signUpForm.controls['role'].errors?.pattern">
+                    <!-- <div *ngIf="editProfile.controls['role'].errors?.pattern">
                         Enter valid Email.
                     </div> -->
                 </div>
@@ -51,13 +51,13 @@
             <div class="col-md-1">:</div>
             <div class="col-md-6 input-box ">
                 <div appearance="fill">
-                    <input matInput type="date" max={{latest_date}} name="dateOfBirth" formControlName="dateOfBirth">
+                    <input matInput type="date" max={{latest_date}} [(ngModel)]="date" name="dateOfBirth" formControlName="dateOfBirth">
                 </div>
-                <div *ngIf="signUpForm.controls['dateOfBirth'].invalid && signUpForm.controls['dateOfBirth'].touched" class="warn">
-                    <div *ngIf="signUpForm.controls['dateOfBirth'].errors?.required">
+                <div *ngIf="editProfile.controls['dateOfBirth'].invalid && editProfile.controls['dateOfBirth'].touched" class="warn">
+                    <div *ngIf="editProfile.controls['dateOfBirth'].errors?.required">
                         Date required.
                     </div>
-                    <!-- <div *ngIf="signUpForm.controls['role'].errors?.pattern">
+                    <!-- <div *ngIf="editProfile.controls['role'].errors?.pattern">
                         Enter valid Email.
                     </div> -->
                 </div>
@@ -67,12 +67,12 @@
         <div class="signUp row Col-md-12">
             <div class="col-md-5 ">Phone Number </div>
             <div class="col-md-1">:</div>
-            <div class="col-md-6 input-box "><input type="number" ngModel={{phoneNumber}} formControlName="phoneNumber">
-                <div *ngIf="signUpForm.controls['phoneNumber'].invalid && signUpForm.controls['phoneNumber'].touched" class="warn">
-                    <div *ngIf="signUpForm.controls['phoneNumber'].errors?.required">
+            <div class="col-md-6 input-box "><input type="number" [(ngModel)]="phoneNumber" formControlName="phoneNumber">
+                <div *ngIf="editProfile.controls['phoneNumber'].invalid && editProfile.controls['phoneNumber'].touched" class="warn">
+                    <div *ngIf="editProfile.controls['phoneNumber'].errors?.required">
                         Phone number required.
                     </div>
-                    <div *ngIf="signUpForm.controls['phoneNumber'].errors?.pattern">
+                    <div *ngIf="editProfile.controls['phoneNumber'].errors?.pattern">
                         Enter valid Phone Number.
                     </div>
                 </div>
@@ -81,15 +81,17 @@
         <div class="signUp row Col-md-12">
             <div class="col-md-5 ">Mali ID </div>
             <div class="col-md-1">:</div>
-            <div class="col-md-6 input-box "><input name={{name}} ngModel={{mailId}} formControlName="mailId" type="text">
-                <div *ngIf="signUpForm.controls['mailId'].invalid && signUpForm.controls['mailId'].touched" class="warn">
-                    <div *ngIf="signUpForm.controls['mailId'].errors?.required">
+            <!-- readonly="readonly"  Property useful to only read the field data -->
+            <div class="col-md-6 input-box "><input readonly="readonly" [(ngModel)]="mailId" formControlName="mailId" type="text">
+                <!-- Validations not required Because this firld only Readable -->
+                <!-- <div *ngIf="editProfile.controls['mailId'].invalid && editProfile.controls['mailId'].touched" class="warn">
+                    <div *ngIf="editProfile.controls['mailId'].errors?.required">
                         Email required.
                     </div>
-                    <div *ngIf="signUpForm.controls['mailId'].errors?.pattern">
+                    <div *ngIf="editProfile.controls['mailId'].errors?.pattern">
                         Enter valid Email.
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="signUp row Col-md-12">
@@ -97,15 +99,15 @@
             <div class="col-md-1">:</div>
             <div class="col-md-6 input-box ">
                 <div class="input-group ">
-                    <input ngModel={{password}} formControlName="password" [type]="showPassword ? 'text' : 'password'">
+                    <input [(ngModel)]="password" formControlName="password" [type]="showPassword ? 'text' : 'password'">
                     <div class="col-md-1"><i (click)="showPassword = !showPassword" class="bi bi-eye-fill" [hidden]="showPassword"></i>
                         <i class="bi bi-eye-slash-fill" (click)="showPassword = !showPassword" [hidden]="!showPassword"></i></div>
                 </div>
-                <div *ngIf="signUpForm.controls['password'].invalid && signUpForm.controls['password'].touched" class="warn">
-                    <div *ngIf="signUpForm.controls['password'].errors?.required">
+                <div *ngIf="editProfile.controls['password'].invalid && editProfile.controls['password'].touched" class="warn">
+                    <div *ngIf="editProfile.controls['password'].errors?.required">
                         Password is required.
                     </div>
-                    <div *ngIf="signUpForm.controls['password'].errors?.pattern">
+                    <div *ngIf="editProfile.controls['password'].errors?.pattern">
                         Password is a combination of uppercase, lowercase and special chars.
                     </div>
                 </div>
@@ -116,21 +118,21 @@
             <div class="col-md-1">:</div>
             <div class="col-md-6 input-box ">
                 <div class="input-group ">
-                    <input ngModel={{confirmPassword}} formControlName="confirmPassword" [type]="showConfPassword ? 'text' : 'password'">
+                    <input [(ngModel)]="confirmPassword" formControlName="confirmPassword" [type]="showConfPassword ? 'text' : 'password'">
                     <div class="col-md-1"><i (click)="showConfPassword = !showConfPassword" class="bi bi-eye-fill" [hidden]="showConfPassword"></i>
                         <i class="bi bi-eye-slash-fill" (click)="showConfPassword = !showConfPassword" [hidden]="!showConfPassword"></i></div>
                 </div>
-                <div *ngIf="signUpForm.controls['confirmPassword'].invalid && signUpForm.controls['confirmPassword'].touched" class="warn">
-                    <!-- <div *ngIf="signUpForm.controls['confirmPassword'].errors?.required">
+                <div *ngIf="editProfile.controls['confirmPassword'].invalid && editProfile.controls['confirmPassword'].touched" class="warn">
+                    <!-- <div *ngIf="editProfile.controls['confirmPassword'].errors?.required">
                     Password is required.
                   </div>
-                  <div *ngIf = "signUpForm.controls['confirmPassword'].errors?.CustomValidators" class="warn">
+                  <div *ngIf = "editProfile.controls['confirmPassword'].errors?.CustomValidators" class="warn">
                     Password not matched
                   </div> -->
                     Password not matched
                 </div>
-                <!-- <div *ngIf="signUpForm.controls['confirmPassword'].errors?.required" class="warn">
-          <div *ngIf="signUpForm.controls['confirmPassword'].touched">
+                <!-- <div *ngIf="editProfile.controls['confirmPassword'].errors?.required" class="warn">
+          <div *ngIf="editProfile.controls['confirmPassword'].touched">
             password is Required
           </div>
         </div> -->
@@ -142,23 +144,23 @@
             <div class="col-md-1">:</div>
             <div class="col-md-6 input-box ">
 
-                <div *ngIf="signUpForm.controls['firstName'].invalid && signUpForm.controls['firstName'].touched" class="warn">
-                    <div *ngIf="signUpForm.controls['firstName'].errors?.required">
+                <div *ngIf="editProfile.controls['firstName'].invalid && editProfile.controls['firstName'].touched" class="warn">
+                    <div *ngIf="editProfile.controls['firstName'].errors?.required">
                         Enter Address.
                     </div>
                 </div>
             </div>
         </div>
         <div class="address Col-md-12">
-            <div class="address"><input id="addressLine1" ngModel="Address Line one" formControlName="addressLine1" placeholder="Address line 1" type="text"></div>
-            <div class="address"><input id="addressLine2" ngModel="address line two" formControlName="addressLine2" placeholder="Address line 2" type="text"></div>
+            <div class="address"><input id="addressLine1" [(ngModel)]="addressLine1" formControlName="addressLine1" placeholder="Address line 1" type="text"></div>
+            <div class="address"><input id="addressLine2" [(ngModel)]="addressLine2" formControlName="addressLine2" placeholder="Address line 2" type="text"></div>
             <div class="row mx-0">
-                <div class="col-md-6 address"><input ngModel="city name" formControlName="city" placeholder="City" type="text"></div>
-                <div class="col-md-6 address"><input ngModel="State name" formControlName="state" placeholder="State" type="text"></div>
+                <div class="col-md-6 address"><input [(ngModel)]="city" formControlName="city" placeholder="City" type="text"></div>
+                <div class="col-md-6 address"><input [(ngModel)]="state" formControlName="state" placeholder="State" type="text"></div>
             </div>
             <div class="row mx-0">
-                <div class="col-md-6 address"><input ngModel="Country" formControlName="country" placeholder="Country" type="text"></div>
-                <div class="col-md-6 address"><input ngModel="Zipcode" formControlName="zipcode" placeholder="zipcode" type="text"></div>
+                <div class="col-md-6 address"><input [(ngModel)]="country" formControlName="country" placeholder="Country" type="text"></div>
+                <div class="col-md-6 address"><input [(ngModel)]="zipcode" formControlName="zipcode" placeholder="zipcode" type="text"></div>
             </div>
         </div>
         <!-- <div class="login">Already have an account? <a href="/login">Login</a></div> -->
