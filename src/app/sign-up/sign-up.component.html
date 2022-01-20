@@ -27,10 +27,10 @@
             <div class="col-md-5 ">Role</div>
             <div class="col-md-1">:</div>
             <div class="col-md-6 input-box ">
-                <select ngModel={{role}} formControlName="role">
+                <select ngModel={{role}} (ngModelChange)="onChange($event)" formControlName="role">
                     <option value="">---Select none---</option>
-                    <option value="1">Manager</option>
-                    <option value="2">User</option>
+                    <option value="Manager" >Manager</option>
+                    <option value="User" >User</option>
                 </select>
                 <div *ngIf="signUpForm.controls['role'].invalid && signUpForm.controls['role'].touched" class="warn">
                     <div *ngIf="signUpForm.controls['role'].errors?.required || signUpForm.controls['role'].errors?.pattern">
@@ -42,6 +42,23 @@
                     <!-- <div *ngIf="signUpForm.controls['role'].errors?.pattern">
                         Enter valid Email.
                     </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- <p>{{value=='Manager'?true:false}}</p> -->
+        <div *ngIf="isDisabled" class="signUp row Col-md-12">
+            <div class="col-md-5 ">Manager</div>
+            <div class="col-md-1">:</div>
+            <div class="col-md-6 input-box ">
+                <select ngModel={{role}} formControlName="manager">
+                    <option value="">---Select none---</option>
+                    <option value="1" *ngIf="value=='2'?false:true">Admin</option>
+                    <option value="2" *ngIf="value=='2'?true:false">Manager ID</option>
+                </select>
+                <div *ngIf="signUpForm.controls['role'].invalid && signUpForm.controls['role'].touched" class="warn">
+                    <div *ngIf="signUpForm.controls['role'].errors?.required || signUpForm.controls['role'].errors?.pattern">
+                        Role required.
+                    </div>
                 </div>
             </div>
         </div>
@@ -165,7 +182,7 @@
         <div class="clearfix Col-md-12">
             <!--[disabled]="signUpForm.invalid"-->
             <button class="col-md-3 btn btn-light" type="reset" [routerLink]="['/']">Cancel</button>
-            <button class="col-md-3 btn btn-primary " type="submit" (click)="onSubmit()">Sign Up</button>
+            <button class="col-md-3 btn btn-primary " type="submit" (click)="onSubmit()">Register</button>
         </div>
     </div>
 </form>

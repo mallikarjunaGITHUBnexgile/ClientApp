@@ -8,6 +8,7 @@ export class AppService {
  //public logOutButtonFlag!: boolean;
  /* ***For Enabling Icons*** */ 
  public icon = new BehaviorSubject<any>(false);
+ //public show = new BehaviorSubject<any>(false);
  public profileicon=new BehaviorSubject<any>(false);
   constructor() { }
 

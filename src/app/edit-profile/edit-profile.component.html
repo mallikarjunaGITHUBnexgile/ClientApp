@@ -26,23 +26,24 @@
         <div class="signUp row Col-md-12">
             <div class="col-md-5 ">Role</div>
             <div class="col-md-1">:</div>
-            <div class="col-md-6 input-box ">
-                <select [(ngModel)]="role" formControlName="role">
+            <div class="col-md-6 input-box"><input readonly="readonly" [(ngModel)]="role" formControlName="role" type="text">
+                <!-- <select [(ngModel)]="role" formControlName="role">
                     <option value="">---Select none---</option>
                     <option value="1">Manager</option>
                     <option value="2">User</option>
-                </select>
-                <div *ngIf="editProfile.controls['role'].invalid && editProfile.controls['role'].touched" class="warn">
+                </select> -->
+
+                <!-- <div *ngIf="editProfile.controls['role'].invalid && editProfile.controls['role'].touched" class="warn">
                     <div *ngIf="editProfile.controls['role'].errors?.required || editProfile.controls['role'].errors?.pattern">
                         Role required.
-                    </div>
-                    <!-- <div *ngIf="editProfile.controls['role'].errors?.pattern">
+                    </div> -->
+                <!-- <div *ngIf="editProfile.controls['role'].errors?.pattern">
                         Select correct Role.
                     </div> -->
-                    <!-- <div *ngIf="editProfile.controls['role'].errors?.pattern">
+                <!-- <div *ngIf="editProfile.controls['role'].errors?.pattern">
                         Enter valid Email.
                     </div> -->
-                </div>
+                <!-- </div> -->
             </div>
         </div>
 

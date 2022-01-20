@@ -15,7 +15,7 @@
     <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
   </form> -->
 <div class="container login">
-    <div class="close" [routerLink]="['/']"><i class="bi bi-x-square-fill"></i></div>
+    <div class="close" [routerLink]="['/']"><i type="button" class="bi bi-x-square-fill"></i></div>
     <form [formGroup]="loginForm" novalidate>
 
         <div class="title">Login</div>
@@ -31,7 +31,7 @@
         <div class="input-box ">
             <div class="row">
                 <div class="col-md-11"><input [type]="showPassword ? 'text' : 'password'" ngModel="Hh@1234*" formControlName="password" placeholder="Enter Your Password" required></div>
-                <div class="col-md-1"><i (click)="showPassword = !showPassword" class="bi bi-eye-fill" [hidden]="showPassword"></i>
+                <div class="col-md-1" type="button"><i (click)="showPassword = !showPassword" class="bi bi-eye-fill" [hidden]="showPassword"></i>
                     <i class="bi bi-eye-slash-fill" (click)="showPassword = !showPassword" [hidden]="!showPassword"></i></div>
             </div>
             <div class="underline"></div>

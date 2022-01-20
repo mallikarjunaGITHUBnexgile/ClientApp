@@ -67,6 +67,7 @@ export class EditProfileComponent implements OnInit {
 
   onSubmit() {
     console.log("Update")
+    
   }
 
   editProf() {

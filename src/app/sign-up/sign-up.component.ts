@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { DateRange } from '@angular/material/datepicker';
 import { Router } from '@angular/router';
@@ -13,6 +13,8 @@ import { CustomValidators } from '../custom-validators';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
+
+  @Input() value = '';
   public signUpForm: any;
   //public passwordValidator: any;
   public icons: boolean = false;
@@ -25,10 +27,11 @@ export class SignUpComponent implements OnInit {
   public lastName = "Hell";
   public phoneNumber = 7895641230;
   public mailId = "hello@hel.com";
-  public role = 1;
+  public role = 'Manager';
   public password = "Hh@1234*";
   public confirmPassword = "Hh@1234*";
   public name = "mailId";
+  public show :any;
 
 
   constructor(public formBuilder: FormBuilder, public router: Router, public service: AppService, public datepipe: DatePipe) { }
@@ -41,6 +44,7 @@ export class SignUpComponent implements OnInit {
 
     this.signUp();
 
+
   }
   signUp() {
     this.signUpForm = this.formBuilder.group({
@@ -48,7 +52,8 @@ export class SignUpComponent implements OnInit {
       lastName: new FormControl("", Validators.required),
       mailId: new FormControl("", [Validators.required, Validators.pattern(new RegExp('^[a-zA-Z0-9][a-zA-Z0-9._]{1,}@[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,}$'))]),
       phoneNumber: new FormControl("", [Validators.required, Validators.pattern('^[6-9]{1}[0-9]{9}$')]),
-      role: new FormControl("", [Validators.required, Validators.pattern('^[1,2]{1}$')]),
+      role: new FormControl("", [Validators.required, Validators.pattern('^[User]|[Manager]$')]),
+      manager:new FormControl(""),
       dateOfBirth: new FormControl("", Validators.required),
       password: new FormControl("", [Validators.required, Validators.pattern('^(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\\w\\d\\s:])([^\\s]){8,}$')]),
       confirmPassword: new FormControl("", [Validators.required,]),
@@ -62,13 +67,21 @@ export class SignUpComponent implements OnInit {
     }, { validator: CustomValidators("password", "confirmPassword") }
     )
   }
+  set isDisabled(value: boolean) {
+    this.isDisabled = value;
+    if(value) {
+     this.signUpForm.controls['name'].disable();
+    } else {
+       this.signUpForm.controls['name'].enable();
+     }
+   }
   onSubmit() {
     localStorage.setItem('signindata', JSON.stringify(this.signUpForm.value));
     //console.log(this.signUpForm.get("firstName")?.value);
     //console.log(this.signUpForm.get("password")?.value === this.signUpForm.get("confirmPassword")?.value);
     // this.passwordValidator =! (this.signUpForm.get("password")?.value === this.signUpForm.get("confirmPassword")?.value);
     // console.log(this.passwordValidator);
-
+    console.log("Register Method")
     if (this.signUpForm.invalid) {
       this.signUpForm.markAllAsTouched();
       return;
@@ -77,9 +90,20 @@ export class SignUpComponent implements OnInit {
       this.service.tempData.push(this.signUpForm.value)
       //console.log(this.service.tempData);
       this.router.navigate(['/login']);
+      console.log("Register")
     }
 
 
+  }
+  onChange(event: any) {
+    this.show= event;
+    console.log("Onchange "+this.show)
+    if(event==2){
+      this.show=true;
+    }else{
+      this.show=false;
+    }
+    
   }
 }
 //export class DatepickerDisabledExample {}
