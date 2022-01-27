@@ -25,6 +25,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { DatePipe } from '@angular/common';
+import { TooltipModule } from 'ng2-tooltip-directive';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { DatePipe } from '@angular/common';
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
-    HttpClientModule,
+    HttpClientModule,TooltipModule,
     FormsModule, ReactiveFormsModule, MatTableModule, MatProgressBarModule, MatCardModule, MatProgressSpinnerModule,
     MatSidenavModule,MatDatepickerModule,MatFormFieldModule,MatNativeDateModule,
     RouterModule.forRoot([

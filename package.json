@@ -30,6 +30,7 @@
     "bootstrap": "^5.1.0",
     "http-server": "^14.0.0",
     "jquery": "^3.5.1",
+    "ng2-tooltip-directive": "^2.10.3",
     "oidc-client": "^1.11.5",
     "popper.js": "^1.16.0",
     "run-script-os": "^1.1.6",

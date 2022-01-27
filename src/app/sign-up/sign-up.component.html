@@ -27,7 +27,7 @@
             <div class="col-md-5 ">Role</div>
             <div class="col-md-1">:</div>
             <div class="col-md-6 input-box ">
-                <select ngModel={{role}} (ngModelChange)="onChange($event)" formControlName="role">
+                <select ngModel={{role}} formControlName="role">
                     <option value="">---Select none---</option>
                     <option value="Manager" >Manager</option>
                     <option value="User" >User</option>
@@ -46,14 +46,14 @@
             </div>
         </div>
         <!-- <p>{{value=='Manager'?true:false}}</p> -->
-        <div *ngIf="isDisabled" class="signUp row Col-md-12">
+        <div *ngIf="signUpForm.get('role').value == 'User'" class="signUp row Col-md-12">
             <div class="col-md-5 ">Manager</div>
             <div class="col-md-1">:</div>
             <div class="col-md-6 input-box ">
-                <select ngModel={{role}} formControlName="manager">
-                    <option value="">---Select none---</option>
-                    <option value="1" *ngIf="value=='2'?false:true">Admin</option>
-                    <option value="2" *ngIf="value=='2'?true:false">Manager ID</option>
+                <select ngModel={{manager}} formControlName="manager">
+                    <!-- <option value="">---Select none---</option> -->
+                    <option value="Admin" >Admin</option>
+                    <option value="Manager ID" >Manager ID</option>
                 </select>
                 <div *ngIf="signUpForm.controls['role'].invalid && signUpForm.controls['role'].touched" class="warn">
                     <div *ngIf="signUpForm.controls['role'].errors?.required || signUpForm.controls['role'].errors?.pattern">
@@ -62,7 +62,6 @@
                 </div>
             </div>
         </div>
-
         <div class="signUp row Col-md-12">
             <div class="col-md-5 ">Date Of Birth</div>
             <div class="col-md-1">:</div>
@@ -186,3 +185,8 @@
         </div>
     </div>
 </form>
+<!-- mouse hover -->
+<!-- <div (mouseover)="changeText=true" (mouseout)="changeText=false">
+    <span *ngIf="!changeText">Hide</span>
+    <span *ngIf="changeText">Show</span>
+</div> -->

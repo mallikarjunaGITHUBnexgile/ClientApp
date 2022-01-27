@@ -14,7 +14,7 @@ import { CustomValidators } from '../custom-validators';
 })
 export class SignUpComponent implements OnInit {
 
-  @Input() value = '';
+  @Input() value = "hello";
   public signUpForm: any;
   //public passwordValidator: any;
   public icons: boolean = false;
@@ -28,6 +28,7 @@ export class SignUpComponent implements OnInit {
   public phoneNumber = 7895641230;
   public mailId = "hello@hel.com";
   public role = 'Manager';
+  public manager='Admin'
   public password = "Hh@1234*";
   public confirmPassword = "Hh@1234*";
   public name = "mailId";
@@ -43,7 +44,7 @@ export class SignUpComponent implements OnInit {
     //console.log(this.latest_date+" "+this.maxDate)
 
     this.signUp();
-
+    console.log(this.signUpForm.firstName+"FB");
 
   }
   signUp() {
@@ -52,8 +53,9 @@ export class SignUpComponent implements OnInit {
       lastName: new FormControl("", Validators.required),
       mailId: new FormControl("", [Validators.required, Validators.pattern(new RegExp('^[a-zA-Z0-9][a-zA-Z0-9._]{1,}@[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,}$'))]),
       phoneNumber: new FormControl("", [Validators.required, Validators.pattern('^[6-9]{1}[0-9]{9}$')]),
-      role: new FormControl("", [Validators.required, Validators.pattern('^[User]|[Manager]$')]),
+      role: new FormControl("", [Validators.required, Validators.pattern('^[User]|[Manager]$')]).get('role'),
       manager:new FormControl(""),
+      
       dateOfBirth: new FormControl("", Validators.required),
       password: new FormControl("", [Validators.required, Validators.pattern('^(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\\w\\d\\s:])([^\\s]){8,}$')]),
       confirmPassword: new FormControl("", [Validators.required,]),
@@ -67,14 +69,9 @@ export class SignUpComponent implements OnInit {
     }, { validator: CustomValidators("password", "confirmPassword") }
     )
   }
-  set isDisabled(value: boolean) {
-    this.isDisabled = value;
-    if(value) {
-     this.signUpForm.controls['name'].disable();
-    } else {
-       this.signUpForm.controls['name'].enable();
-     }
-   }
+  
+
+
   onSubmit() {
     localStorage.setItem('signindata', JSON.stringify(this.signUpForm.value));
     //console.log(this.signUpForm.get("firstName")?.value);
