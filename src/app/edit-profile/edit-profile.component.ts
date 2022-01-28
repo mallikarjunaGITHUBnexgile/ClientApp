@@ -4,6 +4,7 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppService } from '../app.service';
 import { CustomValidators } from '../custom-validators';
+import { Location } from '@angular/common';
 
 @Component({
   selector: '[app-edit-profile]',
@@ -12,7 +13,8 @@ import { CustomValidators } from '../custom-validators';
 })
 export class EditProfileComponent implements OnInit {
 
-  constructor(public formBuilder: FormBuilder, public router: Router, public service: AppService, public datepipe: DatePipe) {
+
+  constructor(private _location: Location,public formBuilder: FormBuilder, public router: Router, public service: AppService, public datepipe: DatePipe) {
 
   }
   public name = "mailId";
@@ -89,6 +91,9 @@ export class EditProfileComponent implements OnInit {
       //adress:new FormGroup("")
     }, { validator: CustomValidators("password", "confirmPassword") }
     )
+  }
+  back(){
+    this._location.back();
   }
 
 }

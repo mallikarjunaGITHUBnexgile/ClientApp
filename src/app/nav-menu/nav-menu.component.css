@@ -37,3 +37,13 @@ html {
     text-align: center;
     font-family: 'Brush Script MT';
 }
+
+
+/* ::ng-deep.ngTemplateTips {
+    background-color: transparent !important;
+    margin-top: 0%;
+} */
+
+::ng-deep.ngTemplateTips::before {
+    border-bottom-color: rgb(189, 207, 24) !important;
+}

@@ -28,11 +28,12 @@ export class SignUpComponent implements OnInit {
   public phoneNumber = 7895641230;
   public mailId = "hello@hel.com";
   public role = 'Manager';
-  public manager='Admin'
+  public manager = 'Admin'
   public password = "Hh@1234*";
   public confirmPassword = "Hh@1234*";
   public name = "mailId";
-  public show :any;
+  public show: any;
+  static Managers: any;
 
 
   constructor(public formBuilder: FormBuilder, public router: Router, public service: AppService, public datepipe: DatePipe) { }
@@ -44,7 +45,7 @@ export class SignUpComponent implements OnInit {
     //console.log(this.latest_date+" "+this.maxDate)
 
     this.signUp();
-    console.log(this.signUpForm.firstName+"FB");
+    console.log(this.signUpForm.firstName + "FB");
 
   }
   signUp() {
@@ -54,8 +55,8 @@ export class SignUpComponent implements OnInit {
       mailId: new FormControl("", [Validators.required, Validators.pattern(new RegExp('^[a-zA-Z0-9][a-zA-Z0-9._]{1,}@[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,}$'))]),
       phoneNumber: new FormControl("", [Validators.required, Validators.pattern('^[6-9]{1}[0-9]{9}$')]),
       role: new FormControl("", [Validators.required, Validators.pattern('^[User]|[Manager]$')]).get('role'),
-      manager:new FormControl(""),
-      
+      manager: new FormControl(""),
+
       dateOfBirth: new FormControl("", Validators.required),
       password: new FormControl("", [Validators.required, Validators.pattern('^(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\\w\\d\\s:])([^\\s]){8,}$')]),
       confirmPassword: new FormControl("", [Validators.required,]),
@@ -69,7 +70,16 @@ export class SignUpComponent implements OnInit {
     }, { validator: CustomValidators("password", "confirmPassword") }
     )
   }
-  
+
+  Managers = [
+    { id: 5001, name: 'Manager 1' },
+    { id: 5002, name: 'Manager 2' },
+    { id: 5003, name: 'manager 3' },
+    { id: 5004, name: 'Manager 4' },
+    { id: 5005, name: 'Manager 5' }
+    // "Tony","Peter","Thanos","Bruce","Captain"
+  ];
+
 
 
   onSubmit() {
@@ -93,16 +103,14 @@ export class SignUpComponent implements OnInit {
 
   }
   onChange(event: any) {
-    this.show= event;
-    console.log("Onchange "+this.show)
-    if(event==2){
-      this.show=true;
-    }else{
-      this.show=false;
+    this.show = event;
+    console.log("Onchange " + this.show)
+    if (event == 2) {
+      this.show = true;
+    } else {
+      this.show = false;
     }
-    
+
   }
 }
 //export class DatepickerDisabledExample {}
-
-

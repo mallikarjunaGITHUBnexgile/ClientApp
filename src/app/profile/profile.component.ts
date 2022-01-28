@@ -19,6 +19,8 @@ export class ProfileComponent {
   public role:any;
   public manager:any;
 
+
+
   // public firstName="Hello";
   // public lastName="Hell";
   // public phoneNumber=7895641230;
@@ -39,7 +41,14 @@ export class ProfileComponent {
   this.phoneNumber=x.phoneNumber;
   this.mailId=x.mailId;
   this.role=x.role;
-  this.manager=x.manager;
+  if(x.manager!==""){
+    this.manager="Your Manager is "+x.manager;
+    //console.log("manager"+this.manager)
+  }else{ 
+    this.manager="You are a Manager";
+    //console.log("manager"+this.manager)
+  }
+  console.log("manager"+this.manager)
   this.profileLetter=localStorage.getItem("ProfileLetter");
   this.service.icon.next(true);
 }
