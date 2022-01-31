@@ -48,4 +48,13 @@
 
 </mat-drawer-container> -->
 
-<div>Welcome to {{lastName}} {{firstName}}</div>
+<!-- <div>Welcome to {{lastName}} {{firstName}}</div> -->
+<div class="sidePanel">
+    <div class="option" name="Profile" [routerLinkActive]="['link-active']" type="button">
+        <a href="./profile">Profile</a>
+    </div>
+    <div class="option" name="Profile" [routerLinkActive]="['link-active']" [routerLink]="['/about']" type="button">
+        <a href="./about">About</a>
+    </div>
+
+</div>

@@ -1,4 +1,4 @@
-table {
+/* table {
     width: 100%;
     background-color: rgb(16, 16, 65);
 }
@@ -22,7 +22,8 @@ table {
     background-color: rgb(16, 16, 65);
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;500&display=swap"); */
+
 
 /*.container {
     display: grid;
@@ -35,7 +36,8 @@ table {
     font-family: 'Baloo Paaji 2', cursive;
 }*/
 
-.card {
+
+/* .card {
     background-color: #222831;
     height: 37rem;
     border-radius: 5px;
@@ -173,7 +175,7 @@ table {
 .social-icons a:hover:before {
     transform: scale(0);
     transition: all 265ms ease-in;
-}
+} */
 
 
 /*.social-icons a:hover i {
@@ -187,9 +189,34 @@ table {
     transition: all 265ms ease-in;
 }*/
 
-.grid-container {
+
+/* .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
     font-size: 1.2em;
+} */
+
+div {
+    margin: 1%;
+}
+
+.sidePanel {
+    margin: 2%;
+    width: 15%;
+    border: 2px solid black;
+    background-color: whitesmoke;
+    color: white;
+    height: auto;
+    text-align: center;
+    border-radius: 5%;
+    box-shadow: 13px 13px 5px gray;
+}
+
+.option {
+    height: 50px;
+    padding-top: 5%;
+    background-color: rgb(42, 42, 94);
+    margin: 2%;
+    border-radius: 5%;
 }
