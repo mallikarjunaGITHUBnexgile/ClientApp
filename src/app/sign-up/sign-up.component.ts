@@ -67,7 +67,7 @@ export class SignUpComponent implements OnInit {
       country: new FormControl(""),
       zipcode: new FormControl("")
       //adress:new FormGroup("")
-    }, { validator: CustomValidators("password", "confirmPassword") }
+    }, { validator : CustomValidators("password", "confirmPassword") }
     )
   }
 
@@ -79,6 +79,10 @@ export class SignUpComponent implements OnInit {
     { id: 5005, name: 'Manager 5' }
     // "Tony","Peter","Thanos","Bruce","Captain"
   ];
+
+  Test=[
+    
+  ]
 
 
 
