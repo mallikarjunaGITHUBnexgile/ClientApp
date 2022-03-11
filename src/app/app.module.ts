@@ -29,6 +29,9 @@ import { TooltipModule } from 'ng2-tooltip-directive';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { AboutComponent } from './dashboard/about/about.component';
+import { ProfileComponent1 } from './dashboard/profile/profile.component';
+import { SidePanelComponent } from './dashboard/side-panel/side-panel.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -47,6 +50,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     DashboardComponent,
     LogOutComponent,
     EditProfileComponent,
+    AboutComponent,
+    SidePanelComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -58,9 +63,9 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
     FormsModule, ReactiveFormsModule, MatTableModule, MatProgressBarModule, MatCardModule, MatProgressSpinnerModule,
-    MatSidenavModule,MatDatepickerModule,MatFormFieldModule,MatNativeDateModule,MatTooltipModule,
+    MatSidenavModule,MatDatepickerModule,MatFormFieldModule,MatNativeDateModule,MatTooltipModule,MatInputModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'home', component: HomeComponent, pathMatch: 'full' },
       { path: 'profile', component: ProfileComponent },
       { path: 'nav-menu', component: NavMenuComponent },
       { path: 'login', component: LogInComponent },
@@ -68,10 +73,14 @@ export function HttpLoaderFactory(http: HttpClient) {
       { path: 'signUp', component: SignUpComponent },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'editProfile', component: EditProfileComponent },
+      {path:'about',component:AboutComponent},
+      {path:'profile1',component:ProfileComponent1},
+      {path:'sidePanel',component:SidePanelComponent},
     ]),
     BrowserAnimationsModule
   ],
   providers: [MatNativeDateModule,DatePipe],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:[RouterModule]
 })
 export class AppModule { }

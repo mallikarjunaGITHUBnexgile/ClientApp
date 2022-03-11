@@ -38,9 +38,9 @@ export class DashboardComponent implements OnInit {
     var x = JSON.parse(localStorage.getItem('signindata') || '{}');
     console.log(x.firstName);
      this.firstName=x.firstName;
-     this.firstName=this.firstName.toUpperCase();
-     this.lastName=(x.lastName).toUpperCase();
-     localStorage.setItem("ProfileLetter",this.firstName.charAt(0));
+    //  this.firstName=this.firstName.toUpperCase();
+    //  this.lastName=(x.lastName).toUpperCase();
+     //localStorage.setItem("ProfileLetter",this.firstName.charAt(0));
      this.service.profileicon.next(this.icons);
    /// console.log(this.firstName.charAt(0));
    // console.log(this.service.profileIcon=(x.firstName).charAt[0]);

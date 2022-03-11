@@ -49,12 +49,28 @@
 </mat-drawer-container> -->
 
 <!-- <div>Welcome to {{lastName}} {{firstName}}</div> -->
-<div class="sidePanel">
-    <div class="option" name="Profile" [routerLinkActive]="['link-active']" type="button">
-        <a href="./profile">Profile</a>
+<!-- <div class="row">
+    <div class="sidePanel">
+        <div class="option" name="Profile" [routerLinkActive]="['link-active']" type="button">
+            <a href="./profile1">Profile</a>
+        </div>
+        <div class="option" name="Profile" [routerLinkActive]="['link-active']" [routerLink]="['/about']" type="button">
+            <a href="./about">About</a>
+        </div>
     </div>
-    <div class="option" name="Profile" [routerLinkActive]="['link-active']" [routerLink]="['/about']" type="button">
-        <a href="./about">About</a>
-    </div>
+    <div class="rightPanel">
 
-</div>
+    </div>
+</div> -->
+
+<body>
+    <!-- <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field> -->
+
+    <app-side-panel></app-side-panel>
+    <router-outlet></router-outlet>
+</body>
