@@ -4,6 +4,7 @@ import { ProfileComponent1 } from './profile/profile.component';
 import { AboutComponent } from './about/about.component';
 import { RouterModule } from '@angular/router';
 import { SidePanelComponent } from './side-panel/side-panel.component';
+import { DashboardRoutingModule } from './dashboard-routing.module';
 
 
 
@@ -11,10 +12,10 @@ import { SidePanelComponent } from './side-panel/side-panel.component';
   declarations: [
     ProfileComponent1,
     AboutComponent,
-    SidePanelComponent
+    //SidePanelComponent
   ],
   imports: [
-    CommonModule,
+    CommonModule, DashboardRoutingModule
     // RouterModule.forRoot([
     //   { path: 'profile1', component: ProfileComponent1, pathMatch: 'full' },
     //   { path: 'about', component: AboutComponent },
