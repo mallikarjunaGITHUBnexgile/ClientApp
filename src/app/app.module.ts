@@ -29,9 +29,11 @@ import { TooltipModule } from 'ng2-tooltip-directive';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { AboutComponent } from './dashboard/about/about.component';
-import { ProfileComponent1 } from './dashboard/profile/profile.component';
+// import { AboutComponent } from './dashboard/about/about.component';
+// import { ProfileComponent1 } from './dashboard/profile/profile.component';
 import { SidePanelComponent } from './dashboard/side-panel/side-panel.component';
+import { LeftpanelComponent } from './dashboard/leftpanel/leftpanel.component';
+import { RightpanelComponent } from './dashboard/rightpanel/rightpanel.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -52,6 +54,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     EditProfileComponent,
     
      SidePanelComponent,
+     LeftpanelComponent,
+     RightpanelComponent
      // AboutComponent,
   ],
   imports: [

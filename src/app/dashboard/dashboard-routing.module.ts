@@ -8,7 +8,7 @@ const routes: Routes=[
     { path: '',redirectTo:'profile1',pathMatch:'full'},
     { path: 'profile1', component: ProfileComponent1, pathMatch: 'full' },
       { path: 'about', component: AboutComponent },
-      { path: 'sidepanel', component: SidePanelComponent },
+      
 ]
 @NgModule({
     imports:[RouterModule.forChild(routes)],

@@ -5,6 +5,8 @@ import { AboutComponent } from './about/about.component';
 import { RouterModule } from '@angular/router';
 import { SidePanelComponent } from './side-panel/side-panel.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { LeftpanelComponent } from './leftpanel/leftpanel.component';
+import { RightpanelComponent } from './rightpanel/rightpanel.component';
 
 
 
@@ -12,6 +14,8 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
   declarations: [
     ProfileComponent1,
     AboutComponent,
+    //LeftpanelComponent,
+    //RightpanelComponent,
     //SidePanelComponent
   ],
   imports: [

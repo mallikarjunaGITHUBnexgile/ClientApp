@@ -63,14 +63,20 @@
     </div>
 </div> -->
 
-<body>
-    <!-- <mat-form-field appearance="fill">
+
+<!-- <mat-form-field appearance="fill">
         <mat-label>Choose a date</mat-label>
         <input matInput [matDatepicker]="picker">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
     </mat-form-field> -->
-
-    <app-side-panel></app-side-panel>
-    <router-outlet></router-outlet>
-</body>
+<!-- <div class="row col-md-12">
+        <div class="lcol-md-2">
+            <app-side-panel></app-side-panel>
+        </div>
+        <div class="col-md-10 rightPanel">
+            <router-outlet></router-outlet>
+        </div>
+    </div> -->
+<app-leftpanel></app-leftpanel>
+<app-rightpanel></app-rightpanel>
