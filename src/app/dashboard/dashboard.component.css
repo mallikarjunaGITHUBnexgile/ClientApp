@@ -197,36 +197,39 @@
     font-size: 1.2em;
 } */
 
-div {
-    margin: 0.2%;
-}
-
-.sidePanel,
+.leftPanel,
 .rightPanel {
     margin: 0.5%;
     width: 15%;
-    border: 2px solid black;
+    border: 1px solid gray;
     background-color: whitesmoke;
-    color: white;
-    height: 88vh;
+    color: black;
+    height: 85vh;
     text-align: center;
     border-radius: 1%;
     box-shadow: 13px 13px 5px gray;
+    margin-top: 0%;
+}
+
+.leftPanel {
+    margin-left: 2%;
 }
 
 .rightPanel {
-    width: 70%;
+    width: 80%;
 }
 
-.option {
+
+/* .option {
     height: 50px;
     padding-top: 5%;
     background-color: rgb(42, 42, 94);
     margin: 2%;
     border-radius: 5%;
-}
+} */
 
-mat-datepicker-toggle {
+
+/* mat-datepicker-toggle {
     color: black;
 }
 
@@ -237,4 +240,4 @@ mat-label {
 mat-datepicker {
     color: blue !important;
     background-color: blue !important;
-}
+} */
