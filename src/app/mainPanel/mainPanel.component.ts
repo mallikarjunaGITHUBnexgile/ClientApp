@@ -12,11 +12,11 @@ export interface PeriodicElement {
 
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-mainPanel',
+  templateUrl: './mainPanel.component.html',
+  styleUrls: ['./mainPanel.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class MainPanelComponent implements OnInit {
   //name = this.service.tempData[i].firstName;
   showFiller = false;
   icons=true;

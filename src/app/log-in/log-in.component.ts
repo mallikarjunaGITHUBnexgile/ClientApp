@@ -79,7 +79,7 @@ export class LogInComponent implements OnInit {
           this.service.icon.next(this.icons=true);
           
           //console.log(JSON.stringify(this.service.profileIcon=this.service.tempData[i].firstName.charAt[0]));
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/mainPanel']);
          
            
         }
