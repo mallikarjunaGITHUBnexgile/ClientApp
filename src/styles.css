@@ -27,5 +27,31 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
     /*font-family: Copperplate, Papyrus, fantasy;*/
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.loading {
+    margin-left: 46%;
+    margin-top: 20%;
+    color: rgb(16, 16, 65);
+}
+
+.loading1 {
+    margin-left: 47.3%;
+    color: rgb(16, 16, 65);
+}
+
+.fa-spin.spin-reverse {
+    -webkit-animation-direction: reverse;
+    -moz-animation-direction: reverse;
+    animation-direction: reverse;
+    color: rgb(16, 16, 65);
+}
