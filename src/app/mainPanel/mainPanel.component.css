@@ -1,3 +1,30 @@
+.fa-arrows-left-right {
+    margin-left: 102%;
+}
+
+.leftPanel,
+.rightPanel {
+    margin: 0.5%;
+    width: 15%;
+    border: 1px solid gray;
+    background-color: whitesmoke;
+    color: black;
+    height: 85vh;
+    text-align: center;
+    border-radius: 1%;
+    box-shadow: 13px 13px 5px gray;
+    margin-top: 0%;
+}
+
+.leftPanel {
+    margin-left: 2%;
+}
+
+.rightPanel {
+    width: 80%;
+}
+
+
 /* table {
     width: 100%;
     background-color: rgb(16, 16, 65);
@@ -196,28 +223,6 @@
     grid-gap: 20px;
     font-size: 1.2em;
 } */
-
-.leftPanel,
-.rightPanel {
-    margin: 0.5%;
-    width: 15%;
-    border: 1px solid gray;
-    background-color: whitesmoke;
-    color: black;
-    height: 85vh;
-    text-align: center;
-    border-radius: 1%;
-    box-shadow: 13px 13px 5px gray;
-    margin-top: 0%;
-}
-
-.leftPanel {
-    margin-left: 2%;
-}
-
-.rightPanel {
-    width: 80%;
-}
 
 
 /* .option {

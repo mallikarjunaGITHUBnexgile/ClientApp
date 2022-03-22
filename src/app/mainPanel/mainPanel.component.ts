@@ -18,10 +18,14 @@ export interface PeriodicElement {
 })
 export class MainPanelComponent implements OnInit {
   //name = this.service.tempData[i].firstName;
+  showPassword=false;
   showFiller = false;
   icons=true;
   public firstName!: String;
   public lastName!: String;
+  public width:any;
+  public margin:any;
+  public widthLeft:any;
   //@Output() LogOutBtn: any;
   public x = JSON.parse(localStorage.getItem('signindata') || '{}')
 
@@ -31,6 +35,7 @@ export class MainPanelComponent implements OnInit {
 
   displayedColumns: string[] = ['firstName', 'lastName', 'mailId', 'phoneNumber'];
   dataSource = this.ELEMENT_DATA;
+ 
 
   constructor(private service: AppService, private router: Router) { }
 
@@ -47,6 +52,19 @@ export class MainPanelComponent implements OnInit {
     //this.service.logOutButtonFlag=true;
     //this.LogOutBtn=true;
     //this.router.navigate(['/nav-menu']);
+  }
+
+  sidebar(value: any){
+    if(value){
+      //this.widthLeft=2;
+      this.width=85;
+      //this.margin=3;
+    }else{
+      //this.widthLeft=15;
+      this.width=80;
+      this.margin=0;
+      //this.ngOnInit();
+    }
   }
 
 

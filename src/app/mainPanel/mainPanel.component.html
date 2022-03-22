@@ -79,10 +79,17 @@
         </div>
     </div> -->
 <div class="row">
-    <div class="leftPanel">
-        <app-leftpanel></app-leftpanel>
+    <div class="leftPanel" [hidden]="showPassword" [style.width.%]="widthLeft">
+        <!-- <i type="button" class="fa-solid fa-arrows-left-right" (click)="showPassword = !showPassword" [hidden]="showPassword"></i> {{showPassword}}
+        <i type="button" class="fa-duotone fa-chevron-right" (click)="!showPassword = showPassword" [hidden]="!showPassword"></i> {{showPassword}} -->
+        <div class="col-md-1" type="button"><i (click)="sidebar(showPassword = !showPassword)" class="bi bi-arrow-right" [hidden]="showPassword"></i> {{showPassword}}
+        </div>
+        <app-leftpanel [hidden]="showPassword"></app-leftpanel>
+        <!-- <i class="fa-solid fa-fish-fins"></i> -->
     </div>
-    <div class="rightPanel">
+    <div class="rightPanel" [style.width.%]="width" [style.margin-left.%]="margin">
+        <i class="bi bi-arrow-left" (click)="showPassword = !showPassword"></i>{{showPassword}}
         <app-rightpanel></app-rightpanel>
+        <!-- <app-rightpanel *ngIf="!showPassword"></app-rightpanel> -->
     </div>
 </div>

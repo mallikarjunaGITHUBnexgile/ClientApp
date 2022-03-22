@@ -32,7 +32,8 @@
             <div class="row">
                 <div class="col-md-11"><input [type]="showPassword ? 'text' : 'password'" ngModel="Hh@1234*" formControlName="password" placeholder="Enter Your Password" required></div>
                 <div class="col-md-1" type="button"><i (click)="showPassword = !showPassword" class="bi bi-eye-fill" [hidden]="showPassword"></i>
-                    <i class="bi bi-eye-slash-fill" (click)="showPassword = !showPassword" [hidden]="!showPassword"></i></div>
+                    <i class="bi bi-eye-slash-fill" (click)="showPassword = !showPassword" [hidden]="!showPassword"></i>
+                </div>
             </div>
             <div class="underline"></div>
         </div>
