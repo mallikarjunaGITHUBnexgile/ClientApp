@@ -1,3 +1,4 @@
+import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Component, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppService } from '../app.service';
@@ -14,7 +15,14 @@ export interface PeriodicElement {
 @Component({
   selector: 'app-mainPanel',
   templateUrl: './mainPanel.component.html',
-  styleUrls: ['./mainPanel.component.css']
+  styleUrls: ['./mainPanel.component.css'],
+  animations: [
+    trigger('showPassword', [
+      state('true', style({ height: '*', width:'80%' })),
+      state('false', style({ height: '0px' })),
+      transition('false <=> true', animate(5000))
+    ])
+  ],
 })
 export class MainPanelComponent implements OnInit {
   //name = this.service.tempData[i].firstName;
@@ -26,6 +34,7 @@ export class MainPanelComponent implements OnInit {
   public width:any;
   public margin:any;
   public widthLeft:any;
+  public transition:any;
   //@Output() LogOutBtn: any;
   public x = JSON.parse(localStorage.getItem('signindata') || '{}')
 
@@ -57,15 +66,26 @@ export class MainPanelComponent implements OnInit {
   sidebar(value: any){
     if(value){
       //this.widthLeft=2;
-      this.width=85;
-      //this.margin=3;
+      this.width=95;
+      this.margin=3;
+      this.transition=0.2;
     }else{
       //this.widthLeft=15;
       this.width=80;
       this.margin=0;
+      this.transition=0.1;
       //this.ngOnInit();
     }
   }
 
+  // animations: [
+  //   trigger('showPassword', [
+  //     state('true', style({ height: '*' })),
+  //     state('false', style({ height: '0px' })),
+  //     transition('false <=> true', animate(500))
+  //   ])
+  // ],
+
+  
 
 }
