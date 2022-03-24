@@ -21,6 +21,20 @@
     /*transition: all .3s;*/
 }
 
+.rightPanel {
+    width: 80%;
+}
+
+.bi-arrow-right-circle-fill,
+.bi-arrow-left-circle-fill {
+    float: left;
+    margin-left: -25px;
+}
+
+.bi-arrow-right {
+    float: right;
+}
+
 
 /* .leftPanel:hover {
     margin-left: 2%;
@@ -32,19 +46,6 @@
     width: 85%;
     transition: 2s;
 } */
-
-.rightPanel {
-    width: 80%;
-}
-
-.bi-three-dots-vertical {
-    float: left;
-    margin-left: -25px;
-}
-
-.bi-arrow-right {
-    float: right;
-}
 
 
 /* table {

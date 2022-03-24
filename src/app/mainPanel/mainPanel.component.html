@@ -91,7 +91,8 @@
         <!-- <i class="fa-solid fa-fish-fins"></i> -->
     </div>
     <div class="rightPanel" [style.width.%]="width" [style.transition.s]="transition" [style.margin-left.%]="margin">
-        <i class="bi bi-three-dots-vertical" (click)="sidebar(showPassword = !showPassword)"></i>
+        <i class="bi bi-arrow-left-circle-fill" [hidden]="showPassword" (click)="sidebar(showPassword = !showPassword)"></i>
+        <i class="bi bi-arrow-right-circle-fill" [hidden]="!showPassword" (click)="sidebar(showPassword = !showPassword)"></i>
         <!-- {{showPassword}} -->
         <app-rightpanel></app-rightpanel>
         <!-- <app-rightpanel *ngIf="!showPassword"></app-rightpanel> -->

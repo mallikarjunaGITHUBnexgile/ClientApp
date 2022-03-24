@@ -72,7 +72,7 @@ export class MainPanelComponent implements OnInit {
     }else{
       //this.widthLeft=15;
       this.width=80;
-      this.margin=0;
+      this.margin=0.5;
       this.transition=0.1;
       //this.ngOnInit();
     }
