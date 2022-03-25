@@ -26,7 +26,7 @@ export interface PeriodicElement {
 })
 export class MainPanelComponent implements OnInit {
   //name = this.service.tempData[i].firstName;
-  showPassword=false;
+  expand=false;
   showFiller = false;
   icons=true;
   public firstName!: String;
@@ -35,6 +35,7 @@ export class MainPanelComponent implements OnInit {
   public margin:any;
   public widthLeft:any;
   public transition:any;
+  public marginLeftPanel:any;
   //@Output() LogOutBtn: any;
   public x = JSON.parse(localStorage.getItem('signindata') || '{}')
 
@@ -68,11 +69,13 @@ export class MainPanelComponent implements OnInit {
       //this.widthLeft=2;
       this.width=95;
       this.margin=3;
-      this.transition=0.2;
+      this.marginLeftPanel=-16;
+      this.transition=0.1 ;
     }else{
       //this.widthLeft=15;
       this.width=80;
       this.margin=0.5;
+      this.marginLeftPanel=2;
       this.transition=0.1;
       //this.ngOnInit();
     }
