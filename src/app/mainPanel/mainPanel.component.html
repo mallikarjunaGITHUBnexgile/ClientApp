@@ -1,14 +1,25 @@
-<div class="row">
+<!-- <div class="row">
     <div class="leftPanel" [style.margin-left.%]="marginLeftPanel" [style.transition.s]="transition" [style.width.%]="widthLeft">
         <div class="col-md-1" type="button">
         </div>
-        <app-leftpanel [hidden]="expand"></app-leftpanel>
-        <!-- <i class="fa-solid fa-fish-fins"></i> -->
+        <app-leftpanel [hidden]="false && expand"></app-leftpanel>
     </div>
     <div class="rightPanel" [style.width.%]="width" [style.transition.s]="transition" [style.margin-left.%]="margin">
         <i class="bi bi-arrow-left-circle-fill" [hidden]="expand" (click)="sidebar(expand = !expand)"></i>
         <i class="bi bi-arrow-right-circle-fill" [hidden]="!expand" (click)="sidebar(expand = !expand)"></i>
-        <!-- {{expand}} -->
+        <app-rightpanel></app-rightpanel>
+    </div>
+</div> -->
+<!-- ~~~~~~~~~~~~~Designed Using ngClass~~~~~~~~~~~~~~~~ -->
+<div class="row">
+    <div [ngClass]="!expand?'leftPanel':'leftPanel-hide'">
+        <div class="col-md-1" type="button">
+        </div>
+        <app-leftpanel [hidden]="false && expand"></app-leftpanel>
+    </div>
+    <div [ngClass]="!expand?'rightPanel':'rightPanel-expand'">
+        <i class="bi bi-arrow-left-circle-fill" [hidden]="expand" (click)="sidebar(expand = !expand)"></i>
+        <i class="bi bi-arrow-right-circle-fill" [hidden]="!expand" (click)="sidebar(expand = !expand)"></i>
         <app-rightpanel></app-rightpanel>
     </div>
 </div>

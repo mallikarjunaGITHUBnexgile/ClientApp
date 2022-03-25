@@ -14,6 +14,7 @@
     border-radius: 1%;
     box-shadow: 13px 13px 5px gray;
     margin-top: 0%;
+    transition: 1.2s
 }
 
 .leftPanel {
@@ -21,14 +22,35 @@
     /*transition: all .3s;*/
 }
 
+.leftPanel-hide {
+    margin-left: -15%;
+    width: 15%;
+    transition: 1s;
+}
+
 .rightPanel {
     width: 80%;
+}
+
+.rightPanel-expand {
+    margin-left: 3%;
+    width: 95%;
+    border: 1px solid gray;
+    background-color: whitesmoke;
+    color: black;
+    height: 85vh;
+    text-align: center;
+    border-radius: 1%;
+    box-shadow: 13px 13px 5px gray;
+    margin-top: 0%;
+    transition: 1s
 }
 
 .bi-arrow-right-circle-fill,
 .bi-arrow-left-circle-fill {
     float: left;
     margin-left: -25px;
+    transition: 2s;
 }
 
 .bi-arrow-right {
