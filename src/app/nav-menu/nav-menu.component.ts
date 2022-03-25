@@ -14,6 +14,7 @@ export class NavMenuComponent implements OnChanges {
   public profileIcon: boolean = false;
   public profile:any;
   public letter:any;
+  public expand=false;
   constructor(private service: AppService) { }
   @Input() player: AppService | undefined;
   ngOnChanges(changes: SimpleChanges): void {
@@ -49,5 +50,11 @@ export class NavMenuComponent implements OnChanges {
 
   toggle() {
     this.isExpanded = !this.isExpanded;
+  }
+
+  menu(){
+    this.expand=!this.expand;
+    console.log(this.expand+" from menu");
+    
   }
 }

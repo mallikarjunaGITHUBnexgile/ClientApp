@@ -38,6 +38,15 @@ html {
     font-family: 'Brush Script MT';
 }
 
+.menu {
+    background-color: rgb(16, 16, 65);
+    margin-left: 5%;
+}
+
+.fa-bars {
+    color: white !important;
+}
+
 
 /* ::ng-deep.ngTemplateTips {
     background-color: transparent !important;

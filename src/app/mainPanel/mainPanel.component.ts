@@ -1,5 +1,5 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppService } from '../app.service';
 
@@ -26,7 +26,7 @@ export interface PeriodicElement {
 })
 export class MainPanelComponent implements OnInit {
   //name = this.service.tempData[i].firstName;
-  expand=false;
+  @Input() expand: any;
   showFiller = false;
   icons=true;
   public firstName!: String;

@@ -18,8 +18,8 @@
         <app-leftpanel [hidden]="false && expand"></app-leftpanel>
     </div>
     <div [ngClass]="!expand?'rightPanel':'rightPanel-expand'">
-        <i class="bi bi-arrow-left-circle-fill" [hidden]="expand" (click)="sidebar(expand = !expand)"></i>
-        <i class="bi bi-arrow-right-circle-fill" [hidden]="!expand" (click)="sidebar(expand = !expand)"></i>
+        <i class="bi bi-arrow-left-circle-fill" [hidden]="expand" (click)="expand = !expand"></i>
+        <i class="bi bi-arrow-right-circle-fill" [hidden]="!expand" (click)="expand = !expand"></i>
         <app-rightpanel></app-rightpanel>
     </div>
 </div>
