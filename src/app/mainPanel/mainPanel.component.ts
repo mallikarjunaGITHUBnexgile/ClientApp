@@ -26,7 +26,7 @@ export interface PeriodicElement {
 })
 export class MainPanelComponent implements OnInit {
   //name = this.service.tempData[i].firstName;
-  @Input() expand: any;
+  @Output() expand: any;
   showFiller = false;
   icons=true;
   public firstName!: String;
@@ -62,6 +62,11 @@ export class MainPanelComponent implements OnInit {
     //this.service.logOutButtonFlag=true;
     //this.LogOutBtn=true;
     //this.router.navigate(['/nav-menu']);
+  }
+  changeExpandValue(event:any){
+    this.expand=event;
+    console.log(this.expand+" From Expand mainpanel cmp");
+    console.log(event+" From event mainpanel cmp");
   }
 
   sidebar(value: any){

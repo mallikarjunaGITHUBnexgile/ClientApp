@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges, ViewChild, ɵɵqueryRefresh } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild, ɵɵqueryRefresh } from '@angular/core';
 import { AppService } from '../app.service';
 
 @Component({
@@ -16,7 +16,11 @@ export class NavMenuComponent implements OnChanges {
   public letter:any;
   public expand=false;
   constructor(private service: AppService) { }
+  public currentItem:any;
   @Input() player: AppService | undefined;
+
+  @Output() showSidePanel: EventEmitter<boolean>=new EventEmitter<boolean>();
+
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes.player);
   }
@@ -52,9 +56,12 @@ export class NavMenuComponent implements OnChanges {
     this.isExpanded = !this.isExpanded;
   }
 
-  menu(){
+  menu(value:any){
     this.expand=!this.expand;
     console.log(this.expand+" from menu");
+    this.showSidePanel.emit(value);
+    console.log(value+" From value nav cmp");
+
     
   }
 }

@@ -12,7 +12,7 @@
 </div> -->
 <!-- ~~~~~~~~~~~~~Designed Using ngClass~~~~~~~~~~~~~~~~ -->
 <div class="row">
-    <div [ngClass]="!expand?'leftPanel':'leftPanel-hide'">
+    <div [ngClass]="!expand?'leftPanel':'leftPanel-hide'" (showSidePanel)="changeExpandValue($event)">
         <div class="col-md-1" type="button">
         </div>
         <app-leftpanel [hidden]="false && expand"></app-leftpanel>
