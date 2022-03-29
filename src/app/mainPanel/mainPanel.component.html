@@ -11,6 +11,8 @@
     </div>
 </div> -->
 <!-- ~~~~~~~~~~~~~Designed Using ngClass~~~~~~~~~~~~~~~~ -->
+<!--Test purpose {{message}} Test purpose-->
+<!--Test purpose <button (click)="newMessage()">New Message</button> -->
 <div class="row">
     <div [ngClass]="!expand?'leftPanel':'leftPanel-hide'" (showSidePanel)="changeExpandValue($event)">
         <div class="col-md-1" type="button">
@@ -18,8 +20,8 @@
         <app-leftpanel [hidden]="false && expand"></app-leftpanel>
     </div>
     <div [ngClass]="!expand?'rightPanel':'rightPanel-expand'">
-        <i class="bi bi-arrow-left-circle-fill" [hidden]="expand" (click)="expand = !expand"></i>
-        <i class="bi bi-arrow-right-circle-fill" [hidden]="!expand" (click)="expand = !expand"></i>
+        <!-- <i class="bi bi-arrow-left-circle-fill" [hidden]="expand" (click)="expand = !expand"></i>
+        <i class="bi bi-arrow-right-circle-fill" [hidden]="!expand" (click)="expand = !expand"></i> -->
         <app-rightpanel></app-rightpanel>
     </div>
 </div>
