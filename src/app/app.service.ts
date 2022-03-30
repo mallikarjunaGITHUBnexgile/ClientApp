@@ -7,7 +7,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class AppService {
   public tempData: any[] = [];
-  public managersList: any[] = []
+  public managersList: any[] = [];
+  public loginUserData: any[] = [];
   //public logOutButtonFlag!: boolean;
   /* ***For Enabling Icons*** */
   public icon = new BehaviorSubject<any>(false);

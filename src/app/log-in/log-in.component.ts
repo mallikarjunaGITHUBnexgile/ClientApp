@@ -14,7 +14,7 @@ export class LogInComponent implements OnInit {
   public loginForm: any;
   public type = "password";
   public name: any;
-  @Input() loginObj: any[] = [];
+  public loginObj: any[] = [];
   public flag = 0;
   public icons: boolean = false;
   public profile: any;
@@ -73,7 +73,8 @@ export class LogInComponent implements OnInit {
           console.log(this.flag);
           this.flag++;
           //alert("Welcome " + this.service.tempData[i].firstName);
-          this.loginObj[0] = this.service.tempData[i]
+          // this.loginObj[0] = this.service.tempData[i]
+          this.service.loginUserData[0] = this.service.tempData[i]
           console.log(this.loginObj);
           /* ***Changing value for enabling icons*** */
           this.service.icon.next(this.icons = true);

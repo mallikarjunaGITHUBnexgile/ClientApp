@@ -34,7 +34,7 @@ export class ProfileComponent {
     this.currentCount++;
   }
   ngOnInit(): void{
-  var x = JSON.parse(localStorage.getItem('signindata') || '{}');
+  var x = JSON.parse(this.service.loginUserData[0]/*localStorage.getItem('signindata')*/ || '{}');
   console.log(x.phoneNumber+" role");
   this.firstName=x.firstName;
   this.lastName=x.lastName;
